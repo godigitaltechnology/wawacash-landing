@@ -6,7 +6,7 @@ import { ChevronDown, Flag } from 'lucide-react';
 
 const Navbar = () => {
   return (
-    <nav className="bg-white shadow-sm py-4 px-8 flex justify-between items-center"> {/* Reverted py-3 to py-4 */}
+    <nav className="absolute top-0 left-0 w-full z-50 py-4 px-8 flex justify-between items-center"> {/* Removed bg-white and shadow-sm, added absolute positioning */}
       <div className="flex items-center">
         <Link to="/" className="flex items-center space-x-1">
           <span className="text-2xl font-bold text-gray-900">WAWA</span>

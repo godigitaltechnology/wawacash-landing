@@ -23,7 +23,7 @@ const HeroSection = () => {
         <div className="absolute bottom-1/4 left-1/3 w-40 h-40 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center pt-20"> {/* Added pt-20 here */}
         <div className="text-center md:text-left">
           <h1 className="text-5xl md:text-6xl font-extrabold text-blue-900 leading-tight mb-6">
             Transférez de l'argent, simplement et en toute sécurité
