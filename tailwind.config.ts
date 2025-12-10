@@ -62,6 +62,9 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        footer: { // Custom color for the footer background
+          background: "#0A1931",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
