@@ -63,7 +63,7 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
         footer: { // Custom color for the footer background
-          background: "#0A1931",
+          background: "#072962",
         },
       },
       borderRadius: {
