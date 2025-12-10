@@ -1,5 +1,6 @@
 import React from 'react';
 import { Lock, ThumbsUp, Star, FileText, Zap, Clock } from 'lucide-react';
+import PhoneMockup from '@/components/PhoneMockup'; // Import the new PhoneMockup component
 
 const FeatureCard = ({ icon: Icon, title, description, bgColor, textColor }: { icon: React.ElementType, title: string, description: string, bgColor: string, textColor: string }) => (
   <div className={`p-6 rounded-xl shadow-md ${bgColor} ${textColor} flex items-start space-x-4 h-full`}>
@@ -9,15 +10,6 @@ const FeatureCard = ({ icon: Icon, title, description, bgColor, textColor }: { i
     <div>
       <h3 className="font-semibold text-lg mb-1">{title}</h3>
       <p className="text-sm">{description}</p>
-    </div>
-  </div>
-);
-
-const PhoneMockup = ({ children }: { children?: React.ReactNode }) => (
-  <div className="relative w-full h-[300px] bg-white rounded-[2rem] shadow-xl flex items-center justify-center p-1.5">
-    <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-16 h-4 bg-gray-800 rounded-b-lg"></div> {/* Notch */}
-    <div className="w-full h-full bg-gray-100 rounded-[1.75rem] overflow-hidden flex flex-col">
-      {children}
     </div>
   </div>
 );
@@ -64,7 +56,7 @@ const WhyChooseUs = () => {
               bgColor="bg-blue-50"
               textColor="text-blue-800"
             />
-            <PhoneMockup>
+            <PhoneMockup size="small">
               <div className="flex items-center justify-between p-2 text-xs text-gray-800">
                 <span>9:41</span>
                 <div className="flex items-center space-x-0.5">

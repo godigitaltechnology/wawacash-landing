@@ -3,15 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Play, Apple, Globe, Euro } from 'lucide-react';
-
-const PhoneMockup = ({ children }: { children?: React.ReactNode }) => (
-  <div className="relative w-64 h-[400px] bg-white rounded-[3rem] shadow-xl flex items-center justify-center p-2">
-    <div className="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-6 bg-gray-800 rounded-b-xl"></div> {/* Notch */}
-    <div className="w-full h-full bg-gray-100 rounded-[2.5rem] overflow-hidden flex flex-col">
-      {children}
-    </div>
-  </div>
-);
+import PhoneMockup from '@/components/PhoneMockup'; // Import the new PhoneMockup component
 
 const HeroSection = () => {
   return (
@@ -81,7 +73,7 @@ const HeroSection = () => {
 
         <div className="relative flex justify-center md:justify-end space-x-8">
           <div className="absolute -top-10 left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0">
-            <PhoneMockup>
+            <PhoneMockup size="medium">
               <div className="flex items-center justify-between p-4 text-sm text-gray-800">
                 <span>9:41</span>
                 <div className="flex items-center space-x-1">
