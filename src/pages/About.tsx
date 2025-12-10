@@ -6,14 +6,14 @@ import { MadeWithDyad } from '@/components/made-with-dyad';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label'; // Importation manquante pour Label
-import CallToAction from '@/components/CallToAction'; // Reusing the CallToAction component
-import { Lock, FileText, Clock, Phone, MapPin, Mail, Play, Apple, Facebook, Linkedin, Instagram, Music } from 'lucide-react'; // Ajout de Facebook, Linkedin, Instagram, Music
+import { Label } from '@/components/ui/label';
+import CallToAction from '@/components/CallToAction';
+import { Lock, FileText, Clock, Phone, MapPin, Mail, Facebook, Linkedin, Instagram, Music } from 'lucide-react';
 
 // Reusable FeatureCard for the "Une entreprise agréée" section
-const AboutFeatureCard = ({ icon: Icon, title, description }: { icon: React.ElementType, title: string, description: string }) => (
+const AboutFeatureCard = ({ icon: Icon, title, description, iconBgColor, iconTextColor }: { icon: React.ElementType, title: string, description: string, iconBgColor: string, iconTextColor: string }) => (
   <div className="flex items-start space-x-4 p-4">
-    <div className="p-3 rounded-full bg-blue-100 text-blue-700">
+    <div className={`p-3 rounded-full ${iconBgColor} ${iconTextColor}`}>
       <Icon className="h-6 w-6" />
     </div>
     <div>
@@ -56,12 +56,9 @@ const About = () => {
 
         {/* Une entreprise agréée, gage de confiance */}
         <section className="relative bg-white py-20 px-8 overflow-hidden">
-          {/* Background pattern of blue triangles */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-200 transform rotate-45"></div>
-            <div className="absolute top-1/4 left-1/3 w-32 h-32 bg-blue-200 transform rotate-12"></div>
-            <div className="absolute bottom-1/2 right-1/4 w-48 h-48 bg-blue-200 transform -rotate-30"></div>
-            <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-blue-200 transform rotate-60"></div>
+          {/* Background pattern of blue arrows */}
+          <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'url(/public/placeholder.svg)', backgroundSize: '100px', backgroundRepeat: 'repeat' }}>
+            {/* Remplacez /public/placeholder.svg par votre image de motif de flèches réelle */}
           </div>
           <div className="relative z-10 max-w-6xl mx-auto text-center">
             <h2 className="text-4xl font-extrabold text-blue-900 mb-6">
@@ -71,21 +68,27 @@ const About = () => {
               Derrière Wawa Cash, se trouve une entreprise certifiée, respectant les normes internationales de sécurité financière. Nous plaçons la sécurité et la transparence au cœur de tout.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
               <AboutFeatureCard
                 icon={Lock}
                 title="Sécurité maximale"
-                description="Vos transactions sont protégées par les dernières technologies de cryptage et de sécurité."
+                description="Vos transactions sont protégées par des protocoles de chiffrement avancés pour garantir la confidentialité de vos données."
+                iconBgColor="bg-purple-50"
+                iconTextColor="text-purple-800"
               />
               <AboutFeatureCard
                 icon={FileText}
                 title="Conformité garantie"
                 description="Nos systèmes sont audités régulièrement afin d'assurer une totale conformité et fiabilité de nos services."
+                iconBgColor="bg-orange-50"
+                iconTextColor="text-orange-800"
               />
               <AboutFeatureCard
                 icon={Clock}
                 title="Suivi en temps réel"
                 description="Gardez le contrôle sur chaque envoi grâce à un suivi instantané, du clic d'envoi jusqu'à la réception des fonds."
+                iconBgColor="bg-green-50"
+                iconTextColor="text-green-800"
               />
             </div>
           </div>
