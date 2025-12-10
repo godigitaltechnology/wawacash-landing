@@ -97,7 +97,7 @@ const About = () => {
         {/* Notre vision : rapprocher les communautés */}
         <section className="bg-gray-50 py-20 px-8">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div className="text-center md:text-left">
+            <div className="text-center md:text-left md:order-1"> {/* Explicitly order text first on md */}
               <h2 className="text-4xl font-extrabold text-blue-900 leading-tight mb-6">
                 Notre vision : rapprocher les communautés
               </h2>
@@ -111,7 +111,7 @@ const About = () => {
                 </svg>
               </Link>
             </div>
-            <div className="flex justify-center md:justify-end">
+            <div className="flex justify-center md:justify-end md:order-2"> {/* Explicitly order image second on md */}
               <img src="/public/placeholder.svg" alt="Happy family" className="w-full max-w-md rounded-3xl shadow-lg" />
             </div>
           </div>
