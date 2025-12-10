@@ -37,7 +37,7 @@ const Services = () => {
         </section>
 
         {/* Services Overview Section */}
-        <section className="relative bg-blue-50 py-20 px-8 overflow-hidden">
+        <section className="relative bg-white py-20 px-8 overflow-hidden">
           {/* Background pattern of flying birds - using placeholder for now */}
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'url(/public/placeholder.svg)', backgroundSize: 'cover', backgroundRepeat: 'repeat' }}></div>
           <div className="relative z-10 max-w-6xl mx-auto text-center">
