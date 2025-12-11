@@ -47,7 +47,7 @@ const Footer = () => {
             <h4 className="font-semibold text-lg mb-4">Assistance & Ressources</h4>
             <ul className="space-y-2 text-gray-300 text-sm">
               <li><Link to="/support" className="hover:text-white">Support</Link></li>
-              <li><Link to="/faqs" className="hover:text-white">FAQs</Link></li>
+              <li><Link to="/faqs" className="hover:text-white">FAQs</Link></li> {/* Updated link */}
               <li><Link to="/policy" className="hover:text-white">Politique de Rem. & Réc.</Link></li>
             </ul>
           </div>
@@ -69,8 +69,8 @@ const Footer = () => {
             <ul className="space-y-2 text-gray-300 text-sm">
               <li><Link to="/mentions" className="hover:text-white">Mentions légales</Link></li>
               <li><Link to="/cgu" className="hover:text-white">CGU</Link></li>
-              <li><Link to="/covicos" className="hover:text-white">COVICOS</Link> {/* Added COVICOS */}</li>
-              <li><Link to="/cgv" className="hover:text-white">CGV/CGS</Link></li> {/* Kept CGV/CGS */}
+              <li><Link to="/covicos" className="hover:text-white">COVICOS</Link></li>
+              <li><Link to="/cgv" className="hover:text-white">CGV/CGS</Link></li>
               <li><Link to="/charte" className="hover:text-white">Charte d'utilisation responsable</Link></li>
             </ul>
           </div>
