@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'; // Import Card components
 import { Facebook, Linkedin, Instagram, Music, ChevronRight } from 'lucide-react';
 
 const Support = () => {
@@ -61,28 +62,34 @@ const Support = () => {
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl font-bold text-blue-900 mb-6">Vous avez des questions ?</h2>
             <h3 className="text-4xl font-extrabold text-blue-900 mb-12">Remplissez le formulaire</h3>
-            <div className="bg-white p-8 rounded-xl shadow-lg w-full">
-              <form className="space-y-4">
-                <div>
-                  <Label htmlFor="name">Nom</Label>
-                  <Input id="name" placeholder="Entrez votre nom" />
-                </div>
-                <div>
-                  <Label htmlFor="firstname">Prénom</Label>
-                  <Input id="firstname" placeholder="Entrez votre prénom" />
-                </div>
-                <div>
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea id="message" placeholder="Saisissez votre message" rows={5} />
-                </div>
-                <p className="text-xs text-gray-500 text-left">
-                  En soumettant ce formulaire, vous acceptez que Wawa Cash utilise vos données pour répondre à votre demande. Consultez notre <Link to="/privacy" className="text-blue-600 hover:underline">politique de confidentialité</Link> et nos <Link to="/cgu" className="text-blue-600 hover:underline">conditions</Link> pour plus d'informations.
-                </p>
-                <Button type="submit" className="w-full bg-blue-700 hover:bg-blue-800 text-white">
-                  Envoyez
-                </Button>
-              </form>
-            </div>
+            <Card className="w-full max-w-md mx-auto"> {/* Using Card component */}
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl font-bold text-blue-900">Contactez-nous</CardTitle>
+                <CardDescription className="text-gray-600">Nous sommes là pour vous aider.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form className="space-y-4">
+                  <div>
+                    <Label htmlFor="name">Nom</Label>
+                    <Input id="name" placeholder="Entrez votre nom" />
+                  </div>
+                  <div>
+                    <Label htmlFor="firstname">Prénom</Label>
+                    <Input id="firstname" placeholder="Entrez votre prénom" />
+                  </div>
+                  <div>
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea id="message" placeholder="Saisissez votre message" rows={5} />
+                  </div>
+                  <p className="text-xs text-gray-500 text-left">
+                    En soumettant ce formulaire, vous acceptez que Wawa Cash utilise vos données pour répondre à votre demande. Consultez notre <Link to="/privacy" className="text-blue-600 hover:underline">politique de confidentialité</Link> et nos <Link to="/cgu" className="text-blue-600 hover:underline">conditions</Link> pour plus d'informations.
+                  </p>
+                  <Button type="submit" className="w-full bg-blue-700 hover:bg-blue-800 text-white">
+                    Envoyez
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
           </div>
         </section>
 
