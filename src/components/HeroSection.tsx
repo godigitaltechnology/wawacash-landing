@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Play, Apple, Globe, Euro } from 'lucide-react';
-import PhoneMockup from '@/components/PhoneMockup'; // Import the new PhoneMockup component
+// import PhoneMockup from '@/components/PhoneMockup'; // Removed PhoneMockup import
 
 const HeroSection = () => {
   return (
@@ -71,67 +71,12 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="relative flex justify-center md:justify-end space-x-8">
-          <div className="absolute -top-10 left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0">
-            <PhoneMockup size="medium">
-              <div className="flex items-center justify-between p-4 text-sm text-gray-800">
-                <span>9:41</span>
-                <div className="flex items-center space-x-1">
-                  <span className="w-4 h-2 bg-gray-400 rounded-sm"></span>
-                  <span className="w-4 h-2 bg-gray-400 rounded-sm"></span>
-                  <span className="w-4 h-2 bg-gray-400 rounded-sm"></span>
-                  <span className="w-4 h-2 bg-gray-400 rounded-sm"></span>
-                  <span className="font-bold">LTE</span>
-                  <span className="w-4 h-2 bg-gray-400 rounded-sm"></span>
-                </div>
-              </div>
-              <div className="flex-grow p-4">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-8 h-8 bg-gray-300 rounded-full"></div>
-                    <span className="text-sm font-medium">Bienvenue,</span>
-                  </div>
-                  <div className="relative">
-                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center text-white text-xs">!</div>
-                    <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full animate-ping"></div>
-                  </div>
-                </div>
-                <div className="bg-blue-100 p-4 rounded-xl mb-4">
-                  <p className="text-xs text-gray-600 mb-1">Solde Portefeuille</p>
-                  <p className="text-3xl font-bold text-blue-800">$ 5.650</p>
-                </div>
-                <div className="grid grid-cols-2 gap-3 mb-4">
-                  <Button variant="outline" className="flex flex-col items-center justify-center h-20 text-blue-700 border-blue-200">
-                    <Globe className="h-5 w-5 mb-1" />
-                    <span>Envoyer</span>
-                  </Button>
-                  <Button variant="outline" className="flex flex-col items-center justify-center h-20 text-green-700 border-green-200">
-                    <Euro className="h-5 w-5 mb-1" />
-                    <span>Recharger</span>
-                  </Button>
-                  <Button variant="outline" className="flex flex-col items-center justify-center h-20 text-purple-700 border-purple-200">
-                    <span className="text-xl">💰</span>
-                    <span>Épargner</span>
-                  </Button>
-                  <Button variant="outline" className="flex flex-col items-center justify-center h-20 text-orange-700 border-orange-200">
-                    <span className="text-xl">⚙️</span>
-                    <span>Gérer</span>
-                  </Button>
-                </div>
-                <div className="flex justify-between items-center mb-2">
-                  <p className="text-sm font-medium text-gray-800">Transactions</p>
-                  <Button variant="link" className="text-blue-600 text-sm p-0 h-auto">Voir tout</Button>
-                </div>
-                <div className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-6 h-6 bg-blue-200 rounded-full flex items-center justify-center text-blue-700 text-xs">E</div>
-                    <span className="text-sm">Envoie à Mariline Fayet</span>
-                  </div>
-                  <span className="text-red-500 font-medium">-$20</span>
-                </div>
-              </div>
-            </PhoneMockup>
-          </div>
+        <div className="relative flex justify-center md:justify-end">
+          <img
+            src="/public/Frame 1000002380.png"
+            alt="Wawa Cash App Screenshot"
+            className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto object-contain"
+          />
         </div>
       </div>
     </section>
