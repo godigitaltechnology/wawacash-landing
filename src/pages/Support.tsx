@@ -9,7 +9,6 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'; // Import Card components
 import { Facebook, Linkedin, Instagram, Music, ChevronRight } from 'lucide-react';
 
 const Support = () => {
@@ -62,34 +61,28 @@ const Support = () => {
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl font-bold text-blue-900 mb-6">Vous avez des questions ?</h2>
             <h3 className="text-4xl font-extrabold text-blue-900 mb-12">Remplissez le formulaire</h3>
-            <Card className="w-full max-w-md mx-auto"> {/* Using Card component */}
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl font-bold text-blue-900">Contactez-nous</CardTitle>
-                <CardDescription className="text-gray-600">Nous sommes là pour vous aider.</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form className="space-y-4">
-                  <div>
-                    <Label htmlFor="name">Nom</Label>
-                    <Input id="name" placeholder="Entrez votre nom" />
-                  </div>
-                  <div>
-                    <Label htmlFor="firstname">Prénom</Label>
-                    <Input id="firstname" placeholder="Entrez votre prénom" />
-                  </div>
-                  <div>
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea id="message" placeholder="Saisissez votre message" rows={5} />
-                  </div>
-                  <p className="text-xs text-gray-500 text-left">
-                    En soumettant ce formulaire, vous acceptez que Wawa Cash utilise vos données pour répondre à votre demande. Consultez notre <Link to="/privacy" className="text-blue-600 hover:underline">politique de confidentialité</Link> et nos <Link to="/cgu" className="text-blue-600 hover:underline">conditions</Link> pour plus d'informations.
-                  </p>
-                  <Button type="submit" className="w-full bg-blue-700 hover:bg-blue-800 text-white">
-                    Envoyez
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+            <div className="bg-white p-8 rounded-3xl shadow-lg w-full max-w-md mx-auto"> {/* Adjusted styling for the container */}
+              <form className="space-y-6 text-left"> {/* Increased space-y for better separation */}
+                <div>
+                  <Label htmlFor="name" className="text-gray-900 font-semibold text-base mb-2 block">Nom</Label>
+                  <Input id="name" placeholder="Entrez votre nom" className="bg-blue-50 border-blue-200 focus:border-blue-500 focus-visible:ring-0 h-12 px-4 text-base" />
+                </div>
+                <div>
+                  <Label htmlFor="firstname" className="text-gray-900 font-semibold text-base mb-2 block">Prénom</Label>
+                  <Input id="firstname" placeholder="Entrez votre prénom" className="bg-blue-50 border-blue-200 focus:border-blue-500 focus-visible:ring-0 h-12 px-4 text-base" />
+                </div>
+                <div>
+                  <Label htmlFor="message" className="text-gray-900 font-semibold text-base mb-2 block">Message</Label>
+                  <Textarea id="message" placeholder="Saisissez votre message" rows={5} className="bg-blue-50 border-blue-200 focus:border-blue-500 focus-visible:ring-0 p-4 text-base" />
+                </div>
+                <p className="text-xs text-gray-500 text-left leading-relaxed">
+                  En soumettant ce formulaire, vous acceptez que Wawa Cash utilise vos données pour répondre à votre demande. Consultez notre <Link to="/privacy" className="text-blue-600 hover:underline">politique de confidentialité</Link> et nos <Link to="/cgu" className="text-blue-600 hover:underline">conditions</Link> pour plus d'informations.
+                </p>
+                <Button type="submit" className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg text-lg font-semibold"> {/* Adjusted button styling */}
+                  Envoyez
+                </Button>
+              </form>
+            </div>
           </div>
         </section>
 
