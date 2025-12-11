@@ -111,68 +111,6 @@ const FAQs = () => {
           </div>
         </section>
 
-        {/* Contactez-nous Section (similar to About page) */}
-        <section className="relative bg-gradient-to-b from-blue-50 to-white py-20 px-8 overflow-hidden">
-          <div className="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
-            <div className="text-center md:text-left">
-              <h2 className="text-4xl font-extrabold text-blue-900 mb-6">Contactez-nous</h2>
-              <p className="text-lg text-gray-700 mb-8 max-w-lg mx-auto md:mx-0">
-                Chez Wawa Cash, nous restons à votre écoute. Une question, un besoin d'assistance ou un retour ? Notre équipe est là pour vous.
-              </p>
-              <div className="space-y-6 text-gray-700">
-                <div className="flex items-center space-x-3 justify-center md:justify-start">
-                  <Phone className="h-6 w-6 text-blue-700" />
-                  <span>+1 215 909 1311</span>
-                </div>
-                <div className="flex items-center space-x-3 justify-center md:justify-start">
-                  <MapPin className="h-6 w-6 text-blue-700" />
-                  <span>220 Laurel Rd, Sharon Hill, PA 19079, USA</span>
-                </div>
-                <div className="flex items-center space-x-3 justify-center md:justify-start">
-                  <Mail className="h-6 w-6 text-blue-700" />
-                  <span>customer@wawacash.com</span>
-                </div>
-              </div>
-              <div className="mt-10 text-center md:text-left">
-                <h3 className="font-semibold text-xl text-blue-900 mb-4">Centre d'aide</h3>
-                <p className="text-gray-700 mb-4">
-                  Consultez notre FAQ 24h/24, 7j/7 pour trouver des réponses rapides à vos questions.
-                </p>
-                <Link to="/faqs" className="text-blue-600 hover:underline font-medium flex items-center justify-center md:justify-start space-x-2">
-                  <span>Allez au FAQs</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md mx-auto">
-              <h3 className="text-2xl font-bold text-blue-900 mb-6 text-center">Remplissez le formulaire</h3>
-              <form className="space-y-4">
-                <div>
-                  <Label htmlFor="name">Nom</Label>
-                  <Input id="name" placeholder="Entrez votre nom" />
-                </div>
-                <div>
-                  <Label htmlFor="firstname">Prénom</Label>
-                  <Input id="firstname" placeholder="Entrez votre prénom" />
-                </div>
-                <div>
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea id="message" placeholder="Saisissez votre message" rows={5} />
-                </div>
-                <p className="text-xs text-gray-500">
-                  En soumettant ce formulaire, vous acceptez que Wawa Cash utilise vos données pour répondre à votre demande. Consultez notre <Link to="/privacy" className="text-blue-600 hover:underline">politique de confidentialité</Link> et nos <Link to="/cgu" className="text-blue-600 hover:underline">conditions</Link> pour plus d'informations.
-                </p>
-                <Button type="submit" className="w-full bg-blue-700 hover:bg-blue-800 text-white">
-                  Envoyez
-                </Button>
-              </form>
-            </div>
-          </div>
-        </section>
-
         {/* Suivez Wawa Cash Section */}
         <section className="bg-white py-20 px-8 text-center">
           <div className="max-w-4xl mx-auto">
