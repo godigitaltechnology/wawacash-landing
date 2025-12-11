@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Facebook, Linkedin, Instagram, Play, Apple, Music } from 'lucide-react'; // Added Music icon
+import { Facebook, Linkedin, Instagram, Play, Apple, Music } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -11,10 +11,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
           {/* Logo and Social Icons */}
           <div className="col-span-1 md:col-span-3 flex flex-col items-start">
-            <Link to="/" className="flex items-center space-x-1 mb-6">
-              <span className="text-3xl font-bold text-white">WAWA</span>
-              <div className="w-0 h-0 border-t-[15px] border-t-transparent border-b-[15px] border-b-transparent border-l-[25px] border-l-white"></div>
-              <span className="text-3xl font-bold text-white">cash</span>
+            <Link to="/" className="flex items-center mb-6">
+              <img src="/public/FR-WWC 01.png" alt="WawaCash Logo" className="h-10" /> {/* Integrated logo */}
             </Link>
             <div className="flex space-x-6">
               <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
@@ -46,7 +44,7 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <h4 className="font-semibold text-lg mb-4">Assistance & Ressources</h4>
             <ul className="space-y-2 text-gray-300 text-sm">
-              <li><Link to="/support" className="hover:text-white">Support</Link></li> {/* Updated link */}
+              <li><Link to="/support" className="hover:text-white">Support</Link></li>
               <li><Link to="/faqs" className="hover:text-white">FAQs</Link></li>
               <li><Link to="/policy" className="hover:text-white">Politique de Rem. & Réc.</Link></li>
             </ul>

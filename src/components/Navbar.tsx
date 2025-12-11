@@ -6,12 +6,10 @@ import { ChevronDown, Flag } from 'lucide-react';
 
 const Navbar = () => {
   return (
-    <nav className="absolute top-0 left-0 w-full z-50 py-4 px-8 flex justify-between items-center"> {/* Removed bg-white and shadow-sm, added absolute positioning */}
+    <nav className="absolute top-0 left-0 w-full z-50 py-4 px-8 flex justify-between items-center">
       <div className="flex items-center">
-        <Link to="/" className="flex items-center space-x-1">
-          <span className="text-2xl font-bold text-gray-900">WAWA</span>
-          <div className="w-0 h-0 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent border-l-[20px] border-l-gray-900"></div>
-          <span className="text-2xl font-bold text-gray-900">cash</span>
+        <Link to="/" className="flex items-center">
+          <img src="/public/FR-WWC 01.png" alt="WawaCash Logo" className="h-8" /> {/* Integrated logo */}
         </Link>
       </div>
       <div className="hidden md:flex items-center space-x-6">
@@ -21,7 +19,7 @@ const Navbar = () => {
         <Link to="/tariffs" className="text-gray-900 hover:text-blue-700 font-medium">Tarifs</Link>
         <Link to="/blog" className="text-gray-900 hover:text-blue-700 font-medium">Blog</Link>
         <Link to="/faqs" className="text-gray-900 hover:text-blue-700 font-medium">FAQs</Link>
-        <Link to="/support" className="text-gray-900 hover:text-blue-700 font-medium">Support</Link> {/* Updated link */}
+        <Link to="/support" className="text-gray-900 hover:text-blue-700 font-medium">Support</Link>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="flex items-center space-x-2 text-gray-900 hover:text-blue-700">
