@@ -20,8 +20,8 @@ const Navbar = () => {
         <Link to="/services" className="text-gray-900 hover:text-blue-700 font-medium">Services</Link>
         <Link to="/tariffs" className="text-gray-900 hover:text-blue-700 font-medium">Tarifs</Link>
         <Link to="/blog" className="text-gray-900 hover:text-blue-700 font-medium">Blog</Link>
-        <Link to="/faqs" className="text-gray-900 hover:text-blue-700 font-medium">FAQs</Link> {/* Updated link */}
-        <Link to="/support" className="text-gray-900 hover:text-blue-700 font-medium">Support</Link>
+        <Link to="/faqs" className="text-gray-900 hover:text-blue-700 font-medium">FAQs</Link>
+        <Link to="/support" className="text-gray-900 hover:text-blue-700 font-medium">Support</Link> {/* Updated link */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="flex items-center space-x-2 text-gray-900 hover:text-blue-700">

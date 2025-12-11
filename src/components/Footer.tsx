@@ -46,8 +46,8 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <h4 className="font-semibold text-lg mb-4">Assistance & Ressources</h4>
             <ul className="space-y-2 text-gray-300 text-sm">
-              <li><Link to="/support" className="hover:text-white">Support</Link></li>
-              <li><Link to="/faqs" className="hover:text-white">FAQs</Link></li> {/* Updated link */}
+              <li><Link to="/support" className="hover:text-white">Support</Link></li> {/* Updated link */}
+              <li><Link to="/faqs" className="hover:text-white">FAQs</Link></li>
               <li><Link to="/policy" className="hover:text-white">Politique de Rem. & Réc.</Link></li>
             </ul>
           </div>
