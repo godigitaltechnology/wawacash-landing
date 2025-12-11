@@ -14,11 +14,11 @@ const FAQSection = ({ faqs, showTitle = true }: FAQSectionProps) => {
       )}
       <Accordion type="single" collapsible className="w-full">
         {faqs.map((faq, index) => (
-          <AccordionItem key={index} value={`item-${index}`} className="bg-white mb-4 rounded-lg shadow-sm border-none">
-            <AccordionTrigger className="px-6 py-4 text-lg font-medium text-gray-800 hover:no-underline text-left">
+          <AccordionItem key={index} value={`item-${index}`} className="bg-blue-50 mb-4 rounded-xl border-none"> {/* Updated styling */}
+            <AccordionTrigger className="px-6 py-4 text-lg font-medium text-blue-900 hover:no-underline text-left"> {/* Updated text color */}
               {faq.question}
             </AccordionTrigger>
-            <AccordionContent className="px-6 pb-4 text-gray-600 text-left">
+            <AccordionContent className="px-6 pb-4 text-gray-700 text-left"> {/* Adjusted text color */}
               {faq.answer}
             </AccordionContent>
           </AccordionItem>
