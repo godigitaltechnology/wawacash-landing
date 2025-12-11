@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -96,23 +98,23 @@ const About = () => {
 
         {/* Notre vision : rapprocher les communautés */}
         <section className="bg-gray-50 py-20 px-8">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div className="text-center md:text-left md:order-1"> {/* Explicitly order text first on md */}
+          <div className="max-w-6xl mx-auto flex flex-col items-center">
+            <div className="text-center mb-8">
               <h2 className="text-4xl font-extrabold text-blue-900 leading-tight mb-6">
                 Notre vision : rapprocher les communautés
               </h2>
-              <p className="text-lg text-gray-700 mb-8 max-w-lg mx-auto md:mx-0">
+              <p className="text-lg text-gray-700 mb-8 max-w-lg mx-auto">
                 Chaque transfert est plus qu'une transaction — c'est un lien, un acte d'amour et de solidarité. Notre ambition est claire : faire de Wawa Cash le pont entre la diaspora africaine et leurs familles, grâce à une expérience fluide et accessible.
               </p>
-              <Link to="#" className="text-blue-600 hover:underline font-medium flex items-center justify-center md:justify-start space-x-2">
+              <Link to="#" className="text-blue-600 hover:underline font-medium flex items-center justify-center space-x-2">
                 <span>Télécharger l'application</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                 </svg>
               </Link>
             </div>
-            <div className="flex justify-center md:justify-end md:order-2"> {/* Explicitly order image second on md */}
-              <img src="/public/placeholder.svg" alt="Happy family" className="w-full max-w-md rounded-3xl shadow-lg" />
+            <div className="flex justify-center"> {/* Centering the image */}
+              <img src="/public/Capture d’écran 2025-12-10 à 14.30.12.png" alt="Happy family" className="w-full max-w-md rounded-3xl shadow-lg" />
             </div>
           </div>
         </section>
