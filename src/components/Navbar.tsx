@@ -36,7 +36,10 @@ const Navbar = () => {
         
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="flex items-center space-x-2 text-gray-900 hover:text-blue-700">
+            <Button 
+              variant="outline" 
+              className="flex items-center space-x-2 text-gray-900 hover:text-blue-700 border-gray-300 bg-white hover:bg-gray-50 h-9 px-3"
+            >
               <Flag className="h-4 w-4" />
               <span>Français</span>
               <ChevronDown className="h-4 w-4" />

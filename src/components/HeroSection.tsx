@@ -24,10 +24,9 @@ const HeroSection = () => {
             Avec Wawa Cash, envoyez de l'argent à vos proches en quelques clics. Rapide, fiable et sécurisé, notre service vous connecte à ceux qui comptent, où qu'ils se trouvent dans le monde.
           </p>
           <div className="flex justify-center md:justify-start space-x-4 mb-12">
-            <Button className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-full text-lg flex items-center space-x-2">
-              <Play className="h-5 w-5" />
-              <span>Play Store</span>
-            </Button>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src="/public/play_store_61a380beb1 1.png" alt="Download on Play Store" className="h-12" />
+            </a>
             <Button className="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-full text-lg flex items-center space-x-2">
               <Apple className="h-5 w-5" />
               <span>App Store</span>
