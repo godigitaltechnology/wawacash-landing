@@ -12,22 +12,8 @@ const Footer = () => {
           {/* Logo and Social Icons */}
           <div className="col-span-1 md:col-span-3 flex flex-col items-start">
             <Link to="/" className="flex items-center mb-6">
-              <img src="/public/logo.png" alt="WawaCash Logo" className="h-10" /> {/* Integrated logo */}
+              <img src="/public/logo_light.png" alt="WawaCash Logo" className="h-10" /> {/* Integrated logo */}
             </Link>
-            <div className="flex space-x-6">
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
-                <Facebook className="h-6 w-6" />
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
-                <Linkedin className="h-6 w-6" />
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
-                <Music className="h-6 w-6" /> {/* Using Music icon for TikTok */}
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
-                <Instagram className="h-6 w-6" />
-              </a>
-            </div>
           </div>
 
           {/* Wawa Cash Links */}
@@ -74,29 +60,43 @@ const Footer = () => {
           </div>
         </div>
 
+
+        <div className="flex justify-between items-center w-full">
+          {/* Réseaux sociaux à gauche */}
+          <div className="flex space-x-6">
+            <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
+              <Facebook className="h-6 w-6" />
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
+              <Linkedin className="h-6 w-6" />
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
+              <Music className="h-6 w-6" />
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
+              <Instagram className="h-6 w-6" />
+            </a>
+          </div>
+
+          {/* Stores à droite */}
+          <div className="flex space-x-4">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src="/public/play_store_black.png" alt="Download on Play Store" className="h-12" />
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src="/public/app_store_black.png" alt="Download on Apple Store" className="h-12" />
+            </a>
+          </div>
+        </div>
+
+
         {/* Bottom section: Disclaimer, Copyright, and App Store Buttons */}
         <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center md:items-end space-y-8 md:space-y-0">
-          <div className="text-sm text-gray-400 text-center md:text-left max-w-2xl">
+          <div className="text-sm text-gray-400 text-center md:text-left">
             <p className="mb-4">
-              Ce service t'est proposé par WawaCash, ses différentes entités telles que WawaCash Canada, société enregistrée au Canada sous le numéro d'enregistrement XXXXXXXX, ainsi que ses différents partenaires. Pour plus d'informations, tu peux consulter les conditions générales d'accès à WawaCash et notre politique sur les données personnelles.
+              Ce service t'es proposé par WawaCash, ses différentes entités telles que WawaCash Canada, société enregistrée au Canada sous le numéro d'enregistrement XXXXXXXX, ainsi que ses différents partenaires. Pour plus d'informations, tu peux consulter les conditions générales d'accès à WawaCash et notre politique sur les données personnelles.
             </p>
             <p>© 2025 WawaCash</p>
-          </div>
-          <div className="flex space-x-4">
-            <Button className="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-lg text-sm flex flex-col items-center justify-center h-auto">
-              <span className="text-xs text-gray-300 mb-1">TÉLÉCHARGER SUR</span>
-              <div className="flex items-center space-x-2">
-                <Play className="h-5 w-5" />
-                <span className="font-semibold text-base">Play Store</span>
-              </div>
-            </Button>
-            <Button className="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-lg text-sm flex flex-col items-center justify-center h-auto">
-              <span className="text-xs text-gray-300 mb-1">TÉLÉCHARGER SUR</span>
-              <div className="flex items-center space-x-2">
-                <Apple className="h-5 w-5" />
-                <span className="font-semibold text-base">App Store</span>
-              </div>
-            </Button>
           </div>
         </div>
       </div>
