@@ -7,7 +7,7 @@ import { Play, Apple, Globe, Euro } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="relative bg-gradient-to-b from-blue-50 to-white py-20 px-8 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-[#F5F9FF] via-[#D0E3FF] to-[#F5F9FF] from-blue-50 to-white py-20 px-8 overflow-hidden">
       {/* Background pattern - simplified with divs */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-1/4 left-1/4 w-40 h-40 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
