@@ -22,7 +22,7 @@ const Navbar = () => {
     <nav className="absolute top-0 left-0 w-full z-50 py-4 px-8 flex justify-between items-center">
       <div className="flex items-center">
         <Link to="/" className="flex items-center">
-          <img src="/public/FR-WWC 01.png" alt="WawaCash Logo" className="h-8" />
+          <img src="/public/logo.png" alt="WawaCash Logo" className="h-8" />
         </Link>
       </div>
 
@@ -66,7 +66,7 @@ const Navbar = () => {
               {/* Header with logo and close button */}
               <div className="flex items-center justify-between p-4 border-b">
                 <Link to="/" className="flex items-center" onClick={() => setIsOpen(false)}>
-                  <img src="/public/FR-WWC 01.png" alt="WawaCash Logo" className="h-8" />
+                  <img src="/public/logo.png" alt="WawaCash Logo" className="h-8" />
                 </Link>
                 <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
                   <X className="h-6 w-6" />

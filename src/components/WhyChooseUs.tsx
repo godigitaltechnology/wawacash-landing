@@ -43,7 +43,7 @@ const WhyChooseUs = () => {
             {/* Image of person with phone */}
             <div className="rounded-xl overflow-hidden shadow-md">
               {/* Replace with your actual image: /public/images/person-with-phone.jpg */}
-              <img src="/public/placeholder.svg" alt="Person using phone" className="w-full h-auto object-cover" />
+              <img src="/public/home_why_1.png" alt="Person using phone" className="w-full h-auto object-cover" />
             </div>
           </div>
 
@@ -56,34 +56,10 @@ const WhyChooseUs = () => {
               bgColor="bg-blue-50"
               textColor="text-blue-800"
             />
-            <PhoneMockup size="small">
-              <div className="flex items-center justify-between p-2 text-xs text-gray-800">
-                <span>9:41</span>
-                <div className="flex items-center space-x-0.5">
-                  <span className="w-3 h-1.5 bg-gray-400 rounded-sm"></span>
-                  <span className="w-3 h-1.5 bg-gray-400 rounded-sm"></span>
-                  <span className="w-3 h-1.5 bg-gray-400 rounded-sm"></span>
-                  <span className="w-3 h-1.5 bg-gray-400 rounded-sm"></span>
-                  <span className="font-bold">LTE</span>
-                  <span className="w-3 h-1.5 bg-gray-400 rounded-sm"></span>
-                </div>
-              </div>
-              <div className="flex-grow p-3">
-                <div className="flex items-center space-x-2 mb-3">
-                  <div className="w-6 h-6 bg-gray-300 rounded-full"></div>
-                  <span className="text-sm font-medium">Paula Maelle</span>
-                </div>
-                <div className="bg-white p-3 rounded-lg shadow-sm">
-                  <p className="text-xs text-gray-600 mb-1">Montant du transfert</p>
-                  <p className="text-lg font-bold text-gray-800">100,00 EUR</p>
-                  <p className="text-xs text-gray-600 mt-2 mb-1">Frais de service</p>
-                  <p className="text-lg font-bold text-gray-800">3,00 EUR</p>
-                  <div className="border-t border-gray-200 my-3"></div>
-                  <p className="text-xs text-gray-600 mb-1">Total</p>
-                  <p className="text-xl font-bold text-blue-700">103,00 EUR</p>
-                </div>
-              </div>
-            </PhoneMockup>
+            <div className="rounded-xl overflow-hidden shadow-md">
+              {/* Replace with your actual image: /public/images/person-thumbs-up.jpg */}
+              <img src="/public/home_why_2.png" alt="Person giving thumbs up" className="w-full h-auto object-cover" />
+            </div>
           </div>
 
           {/* Right Column */}
@@ -98,7 +74,7 @@ const WhyChooseUs = () => {
             {/* Image of person giving thumbs up */}
             <div className="rounded-xl overflow-hidden shadow-md">
               {/* Replace with your actual image: /public/images/person-thumbs-up.jpg */}
-              <img src="/public/placeholder.svg" alt="Person giving thumbs up" className="w-full h-auto object-cover" />
+              <img src="/public/home_why_3.png" alt="Person giving thumbs up" className="w-full h-auto object-cover" />
             </div>
             <FeatureCard
               icon={Zap}

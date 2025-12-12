@@ -12,7 +12,7 @@ const Footer = () => {
           {/* Logo and Social Icons */}
           <div className="col-span-1 md:col-span-3 flex flex-col items-start">
             <Link to="/" className="flex items-center mb-6">
-              <img src="/public/FR-WWC 01.png" alt="WawaCash Logo" className="h-10" /> {/* Integrated logo */}
+              <img src="/public/logo.png" alt="WawaCash Logo" className="h-10" /> {/* Integrated logo */}
             </Link>
             <div className="flex space-x-6">
               <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">

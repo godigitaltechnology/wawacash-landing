@@ -25,12 +25,11 @@ const HeroSection = () => {
           </p>
           <div className="flex justify-center md:justify-start space-x-4 mb-12">
             <a href="#" target="_blank" rel="noopener noreferrer">
-              <img src="/public/play_store_61a380beb1 1.png" alt="Download on Play Store" className="h-12" />
+              <img src="/public/play_store_light.png" alt="Download on Play Store" className="h-12" />
             </a>
-            <Button className="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-full text-lg flex items-center space-x-2">
-              <Apple className="h-5 w-5" />
-              <span>App Store</span>
-            </Button>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src="/public/app_store_light.png" alt="Download on Apple Store" className="h-12" />
+            </a>
           </div>
 
           <div className="bg-white p-6 rounded-xl shadow-lg max-w-md mx-auto md:mx-0">
@@ -72,7 +71,7 @@ const HeroSection = () => {
 
         <div className="relative flex justify-center md:justify-end">
           <img
-            src="/public/Frame 1000002380.png"
+            src="/public/frame_background.png"
             alt="Wawa Cash App Screenshot"
             className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto object-contain"
           />
