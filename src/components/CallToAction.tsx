@@ -21,10 +21,10 @@ const CallToAction = () => {
         </Link>
         <div className="flex justify-center space-x-4">
           <a href="#" target="_blank" rel="noopener noreferrer">
-            <img src="/public/play_store_light.png" alt="Download on Play Store" className="h-12" />
+            <img src="/play_store_light.png" alt="Download on Play Store" className="h-12" />
           </a>
           <a href="#" target="_blank" rel="noopener noreferrer">
-            <img src="/public/app_store_light.png" alt="Download on Apple Store" className="h-12" />
+            <img src="/app_store_light.png" alt="Download on Apple Store" className="h-12" />
           </a>
         </div>
       </div>

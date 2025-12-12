@@ -12,7 +12,7 @@ const Footer = () => {
           {/* Logo and Social Icons */}
           <div className="col-span-1 md:col-span-3 flex flex-col items-start">
             <Link to="/" className="flex items-center mb-6">
-              <img src="/public/logo_light.png" alt="WawaCash Logo" className="h-10" /> {/* Integrated logo */}
+              <img src="/logo_light.png" alt="WawaCash Logo" className="h-10" /> {/* Integrated logo */}
             </Link>
           </div>
 
@@ -81,10 +81,10 @@ const Footer = () => {
           {/* Stores à droite */}
           <div className="flex space-x-4">
             <a href="#" target="_blank" rel="noopener noreferrer">
-              <img src="/public/play_store_black.png" alt="Download on Play Store" className="h-12" />
+              <img src="/play_store_black.png" alt="Download on Play Store" className="h-12" />
             </a>
             <a href="#" target="_blank" rel="noopener noreferrer">
-              <img src="/public/app_store_black.png" alt="Download on Apple Store" className="h-12" />
+              <img src="/app_store_black.png" alt="Download on Apple Store" className="h-12" />
             </a>
           </div>
         </div>

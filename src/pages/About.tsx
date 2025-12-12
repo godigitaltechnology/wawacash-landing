@@ -51,7 +51,7 @@ const About = () => {
               </Link>
             </div>
             <div className="flex justify-center md:justify-end">
-              <img src="/public/about_home.png" alt="Team WawaCash" className="w-full max-w-md rounded-3xl shadow-lg" />
+              <img src="/about_home.png" alt="Team WawaCash" className="w-full max-w-md rounded-3xl shadow-lg" />
             </div>
           </div>
         </section>
@@ -59,8 +59,8 @@ const About = () => {
         {/* Une entreprise agréée, gage de confiance */}
         <section className="relative bg-white py-20 px-8 overflow-hidden">
           {/* Background pattern of blue arrows */}
-          <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'url(/public/placeholder.svg)', backgroundSize: '100px', backgroundRepeat: 'repeat' }}>
-            {/* Remplacez /public/placeholder.svg par votre image de motif de flèches réelle */}
+          <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'url(/placeholder.svg)', backgroundSize: '100px', backgroundRepeat: 'repeat' }}>
+            {/* Remplacez /placeholder.svg par votre image de motif de flèches réelle */}
           </div>
           <div className="relative z-10 max-w-6xl mx-auto text-center">
             <h2 className="text-4xl font-extrabold text-blue-900 mb-6">
@@ -115,7 +115,7 @@ const About = () => {
             </div>
             <div className="relative w-full h-[30rem] rounded-xl mt-12 flex items-center justify-center">
                 <img
-                  src="/public/about_happy.png"
+                  src="/about_happy.png"
                   alt="Wawa Cash Services Screenshot"
                   className="w-full h-full object-contain"
                 />

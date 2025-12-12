@@ -25,10 +25,10 @@ const HeroSection = () => {
           </p>
           <div className="flex justify-center md:justify-start space-x-4 mb-12">
             <a href="#" target="_blank" rel="noopener noreferrer">
-              <img src="/public/play_store_light.png" alt="Download on Play Store" className="h-12" />
+              <img src="/play_store_light.png" alt="Download on Play Store" className="h-12" />
             </a>
             <a href="#" target="_blank" rel="noopener noreferrer">
-              <img src="/public/app_store_light.png" alt="Download on Apple Store" className="h-12" />
+              <img src="/app_store_light.png" alt="Download on Apple Store" className="h-12" />
             </a>
           </div>
 
@@ -71,7 +71,7 @@ const HeroSection = () => {
 
         <div className="relative flex justify-center md:justify-end self-end">
           <img
-            src="/public/frame_background.png"
+            src="/frame_background.png"
             alt="Wawa Cash App Screenshot"
             className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto object-contain"
           />

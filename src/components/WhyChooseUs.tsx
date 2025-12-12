@@ -42,8 +42,8 @@ const WhyChooseUs = () => {
             />
             {/* Image of person with phone */}
             <div className="rounded-xl overflow-hidden shadow-md">
-              {/* Replace with your actual image: /public/images/person-with-phone.jpg */}
-              <img src="/public/home_why_1.png" alt="Person using phone" className="w-full h-auto object-cover" />
+              {/* Replace with your actual image: /images/person-with-phone.jpg */}
+              <img src="/home_why_1.png" alt="Person using phone" className="w-full h-auto object-cover" />
             </div>
           </div>
 
@@ -57,8 +57,8 @@ const WhyChooseUs = () => {
               textColor="text-blue-800"
             />
             <div className="rounded-xl overflow-hidden shadow-md">
-              {/* Replace with your actual image: /public/images/person-thumbs-up.jpg */}
-              <img src="/public/home_why_2.png" alt="Person giving thumbs up" className="w-full h-auto object-cover" />
+              {/* Replace with your actual image: /images/person-thumbs-up.jpg */}
+              <img src="/home_why_2.png" alt="Person giving thumbs up" className="w-full h-auto object-cover" />
             </div>
           </div>
 
@@ -73,8 +73,8 @@ const WhyChooseUs = () => {
             />
             {/* Image of person giving thumbs up */}
             <div className="rounded-xl overflow-hidden shadow-md">
-              {/* Replace with your actual image: /public/images/person-thumbs-up.jpg */}
-              <img src="/public/home_why_3.png" alt="Person giving thumbs up" className="w-full h-auto object-cover" />
+              {/* Replace with your actual image: /images/person-thumbs-up.jpg */}
+              <img src="/home_why_3.png" alt="Person giving thumbs up" className="w-full h-auto object-cover" />
             </div>
             <FeatureCard
               icon={Zap}

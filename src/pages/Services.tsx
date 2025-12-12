@@ -31,7 +31,7 @@ const Services = () => {
               </Link>
             </div>
             <div className="flex justify-center md:justify-end">
-              <img src="/public/home_services.png" alt="Woman looking at phone" className="w-full max-w-md rounded-3xl shadow-lg" />
+              <img src="/home_services.png" alt="Woman looking at phone" className="w-full max-w-md rounded-3xl shadow-lg" />
             </div>
           </div>
         </section>
@@ -39,7 +39,7 @@ const Services = () => {
         {/* Services Overview Section */}
         <section className="relative bg-white py-20 px-8 overflow-hidden">
           {/* Background pattern of flying birds - using placeholder for now */}
-          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'url(/public/placeholder.svg)', backgroundSize: 'cover', backgroundRepeat: 'repeat' }}></div>
+          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'url(/placeholder.svg)', backgroundSize: 'cover', backgroundRepeat: 'repeat' }}></div>
           <div className="relative z-10 max-w-6xl mx-auto text-center">
             <h2 className="text-4xl font-extrabold text-blue-900 mb-6">
               Des services qui rapprochent les familles
@@ -53,7 +53,7 @@ const Services = () => {
 
               <div className="flex justify-center">
                 <img
-                  src="/public/services_1.png"
+                  src="/services_1.png"
                   alt="Wawa Cash Services Screenshot"
                   className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto object-contain"
                 />
@@ -82,7 +82,7 @@ const Services = () => {
             {/* Réception d'argent */}
             <div className="grid md:grid-cols-2 gap-12 items-center mb-20 text-left">
               <div className="flex justify-center md:order-2">
-                <img src="/public/services_2.png" alt="Wawa Cash Services Screenshot" className="w-full max-w-md rounded-3xl shadow-lg" />
+                <img src="/services_2.png" alt="Wawa Cash Services Screenshot" className="w-full max-w-md rounded-3xl shadow-lg" />
               </div>
               <div className="md:order-1">
                 <h3 className="text-3xl font-bold text-blue-900 mb-4">Réception d'argent</h3>
@@ -124,7 +124,7 @@ const Services = () => {
                 </Link>
               </div>
               <div className="flex justify-center">
-                <img src="/public/services_3.png" alt="Wawa Cash Services Screenshot" className="w-full max-w-md rounded-3xl shadow-lg" />
+                <img src="/services_3.png" alt="Wawa Cash Services Screenshot" className="w-full max-w-md rounded-3xl shadow-lg" />
               </div>
             </div>
 
@@ -147,7 +147,7 @@ const Services = () => {
               </div>
               <div className="flex justify-center">
                 <img
-                  src="/public/services_4.png"
+                  src="/services_4.png"
                   alt="Wawa Cash Services Screenshot"
                   className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto object-contain"
                 />
@@ -174,7 +174,7 @@ const Services = () => {
               {/* Placeholder for the map-like illustration with avatars */}
               <div className="relative w-full h-[32rem] rounded-xl mt-12 flex items-center justify-center">
                 <img
-                  src="/public/services_groupe.png"
+                  src="/services_groupe.png"
                   alt="Wawa Cash Services Screenshot"
                   className="w-full h-full object-contain"
                 />

@@ -19,7 +19,7 @@ const Support = () => {
         {/* Hero Section for Support Page */}
         <section className="relative bg-gradient-to-b from-blue-50 to-white py-20 px-8 overflow-hidden pt-32">
           {/* Background pattern - using placeholder for now */}
-          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'url(/public/placeholder.svg)', backgroundSize: 'cover', backgroundRepeat: 'repeat' }}></div>
+          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'url(/placeholder.svg)', backgroundSize: 'cover', backgroundRepeat: 'repeat' }}></div>
           <div className="relative z-10 max-w-6xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-extrabold text-blue-900 leading-tight mb-6">
               Support

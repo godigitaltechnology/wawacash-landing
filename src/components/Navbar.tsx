@@ -25,7 +25,7 @@ const Navbar = () => {
         {/* Col 1 — Logo */}
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
-            <img src="/public/logo.png" alt="WawaCash Logo" className="h-10" />
+            <img src="/logo.png" alt="WawaCash Logo" className="h-10" />
           </Link>
         </div>
 
