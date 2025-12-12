@@ -43,7 +43,7 @@ const Support = () => {
                 <ChevronRight className="h-5 w-5" />
               </Button>
               <Button variant="outline" className="flex justify-between items-center bg-green-50 hover:bg-green-100 text-green-800 px-6 py-3 rounded-xl text-lg h-auto">
-                <span>Comment créer un compte Wawa Cash ?</span>
+                <span>Comment créer un compte WawaCash ?</span>
                 <ChevronRight className="h-5 w-5" />
               </Button>
             </div>

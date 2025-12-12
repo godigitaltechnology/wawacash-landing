@@ -100,7 +100,7 @@ const FAQs = () => {
         </section>
 
         {/* FAQ Content Section */}
-        <section className="bg-gray-50 py-20 px-8">
+        <section className="bg-white py-20 px-8">
           <div className="max-w-4xl mx-auto text-center">
             <FAQCategories
               categories={categories}

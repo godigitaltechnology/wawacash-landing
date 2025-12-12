@@ -31,7 +31,7 @@ const About = () => {
       <Navbar />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-b from-blue-50 to-white py-20 px-8 overflow-hidden pt-32">
+        <section className="relative bg-gradient-to-b from-[#F5F9FF] via-[#D0E3FF] to-[#F5F9FF] from-blue-50 to-white py-20 px-8 overflow-hidden pt-32">
           <div className="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div className="text-center md:text-left">
               <h1 className="text-5xl md:text-6xl font-extrabold text-blue-900 leading-tight mb-6">
@@ -51,7 +51,7 @@ const About = () => {
               </Link>
             </div>
             <div className="flex justify-center md:justify-end">
-              <img src="/public/placeholder.svg" alt="Team WawaCash" className="w-full max-w-md rounded-3xl shadow-lg" />
+              <img src="/public/about_home.png" alt="Team WawaCash" className="w-full max-w-md rounded-3xl shadow-lg" />
             </div>
           </div>
         </section>
@@ -113,9 +113,13 @@ const About = () => {
                 </svg>
               </Link>
             </div>
-            <div className="flex justify-center"> {/* Centering the image */}
-              <img src="/public/Capture d’écran 2025-12-10 à 14.30.12.png" alt="Happy family" className="w-full max-w-md rounded-3xl shadow-lg" />
-            </div>
+            <div className="relative w-full h-[30rem] rounded-xl mt-12 flex items-center justify-center">
+                <img
+                  src="/public/about_happy.png"
+                  alt="Wawa Cash Services Screenshot"
+                  className="w-full h-full object-contain"
+                />
+              </div>
           </div>
         </section>
 
@@ -123,7 +127,7 @@ const About = () => {
         <CallToAction />
 
         {/* Contactez-nous Section */}
-        <section className="relative bg-gradient-to-b from-blue-50 to-white py-20 px-8 overflow-hidden">
+        <section className="relative bg-white from-blue-50 to-white py-20 px-8 overflow-hidden">
           <div className="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
             <div className="text-center md:text-left">
               <h2 className="text-4xl font-extrabold text-blue-900 mb-6">Contactez-nous</h2>

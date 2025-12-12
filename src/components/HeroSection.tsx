@@ -69,7 +69,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="relative flex justify-center md:justify-end">
+        <div className="relative flex justify-center md:justify-end self-end">
           <img
             src="/public/frame_background.png"
             alt="Wawa Cash App Screenshot"

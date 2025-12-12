@@ -53,9 +53,13 @@ const Navbar = () => {
                   variant="outline"
                   className="flex items-center space-x-2 text-gray-900 hover:text-blue-700 border-gray-300 bg-white hover:bg-gray-50 h-9 px-3"
                 >
-                  <Flag className="h-4 w-4" />
-                  <span>Français</span>
-                  <ChevronDown className="h-4 w-4" />
+                  <span>Français</span>      {/* texte à gauche */}
+                  <img
+                    src="/flag/fr.png"            // chemin vers ton image
+                    alt="Drapeau français"
+                    className="h-4 w-4 rounded-sm"      // taille et bordure si tu veux
+                  />
+                  <ChevronDown className="h-4 w-4" /> {/* chevron juste après le drapeau */}
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
@@ -64,6 +68,7 @@ const Navbar = () => {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
+
 
         </div>
 
