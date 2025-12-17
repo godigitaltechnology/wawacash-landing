@@ -6,8 +6,11 @@ import { MadeWithDyad } from '@/components/made-with-dyad';
 import { Button } from '@/components/ui/button';
 import PhoneMockup from '@/components/PhoneMockup';
 import { Play, Apple } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Services = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -16,15 +19,15 @@ const Services = () => {
         <section className="relative bg-gradient-to-b from-[#F5F9FF] via-[#D0E3FF] to-[#F5F9FF] from-blue-50 to-white py-20 px-8 overflow-hidden pt-32">
           <div className="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div className="text-center md:text-left">
-              <p className="text-blue-700 font-semibold mb-2">Bien plus qu'un transfert</p>
+              <p className="text-blue-700 font-semibold mb-2">{t("services_hero_tagline")}</p>
               <h1 className="text-5xl md:text-6xl font-extrabold text-blue-900 leading-tight mb-6">
-                Une expérience financière complète
+                {t("services_hero_title")}
               </h1>
               <p className="text-lg text-gray-700 mb-8 max-w-lg mx-auto md:mx-0">
-                Chez Wawa Cash, nous avons repensé la façon d'envoyer, de recevoir et d'épargner votre argent. Notre solution réunit simplicité, sécurité et liberté pour vous offrir bien plus qu'un service, un véritable compagnon pour gérer votre argent au quotidien.
+                {t("services_hero_description")}
               </p>
               <Link to="#" className="text-blue-600 hover:underline font-medium flex items-center justify-center md:justify-start space-x-2">
-                <span>Télécharger l'application</span>
+                <span>{t("telecharger_application")}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                 </svg>
@@ -42,10 +45,10 @@ const Services = () => {
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'url(/placeholder.svg)', backgroundSize: 'cover', backgroundRepeat: 'repeat' }}></div>
           <div className="relative z-10 max-w-6xl mx-auto text-center">
             <h2 className="text-4xl font-extrabold text-blue-900 mb-6">
-              Des services qui rapprochent les familles
+              {t("services_overview_title")}
             </h2>
             <p className="text-lg text-gray-700 mb-16 max-w-2xl mx-auto">
-              Que vous soyez ici ou à l'étranger, Wawa Cash vous rapproche de vos proches. Envoyez, recevez et gérez votre argent en toute confiance, avec une transparence totale à chaque étape.
+              {t("services_overview_description")}
             </p>
 
             {/* Transfert d'argent */}
@@ -59,19 +62,19 @@ const Services = () => {
                 />
               </div>
               <div>
-                <h3 className="text-3xl font-bold text-blue-900 mb-4">Transfert d'argent</h3>
+                <h3 className="text-3xl font-bold text-blue-900 mb-4">{t("transfert_argent_title")}</h3>
                 <p className="text-gray-700 mb-4">
-                  Envoyez de l'argent depuis la diaspora simplement et sans tracas avec Wawa Cash. Grâce à votre portefeuille Wawa Send, transférez :
+                  {t("transfert_argent_p1")}
                 </p>
                 <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6">
-                  <li>Vers un compte Mobile Money (MTN, Moov, Orange, etc.) pour soutenir vos proches,</li>
-                  <li>Ou vers un autre portefeuille Wawa Send pour des envois instantanés.</li>
+                  <li>{t("transfert_argent_li1")}</li>
+                  <li>{t("transfert_argent_li2")}</li>
                 </ul>
                 <p className="text-gray-700 mb-6">
-                  Deux options, une même promesse : simplicité, rapidité et sécurité. Chaque transfert est suivi en temps réel, avec des notifications claires à chaque étape.
+                  {t("transfert_argent_p2")}
                 </p>
                 <Link to="#" className="text-blue-600 hover:underline font-medium flex items-center space-x-2">
-                  <span>Télécharger l'application</span>
+                  <span>{t("telecharger_application")}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                   </svg>
@@ -85,20 +88,20 @@ const Services = () => {
                 <img src="/services_2.png" alt="Wawa Cash Services Screenshot" className="w-full max-w-md rounded-3xl shadow-lg" />
               </div>
               <div className="md:order-1">
-                <h3 className="text-3xl font-bold text-blue-900 mb-4">Réception d'argent</h3>
+                <h3 className="text-3xl font-bold text-blue-900 mb-4">{t("reception_argent_title")}</h3>
                 <p className="text-gray-700 mb-4">
-                  Recevez votre argent instantanément et sans complication avec Wawa Cash. Qu'il s'agisse d'un soutien familial ou d'un paiement, tout se fait vite et en toute sécurité. Votre portefeuille Wawa Send vous permet de :
+                  {t("reception_argent_p1")}
                 </p>
                 <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6">
-                  <li>Recevoir depuis un autre compte Wawa Send,</li>
-                  <li>Collecter des fonds via Mobile Money,</li>
-                  <li>Suivre chaque transaction en temps réel.</li>
+                  <li>{t("reception_argent_li1")}</li>
+                  <li>{t("reception_argent_li2")}</li>
+                  <li>{t("reception_argent_li3")}</li>
                 </ul>
                 <p className="text-gray-700 mb-6">
-                  Aucun retard, aucun frais caché. Votre argent reste entre de bonnes mains : les vôtres.
+                  {t("reception_argent_p2")}
                 </p>
                 <Link to="#" className="text-blue-600 hover:underline font-medium flex items-center space-x-2">
-                  <span>Télécharger l'application</span>
+                  <span>{t("telecharger_application")}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                   </svg>
@@ -109,15 +112,15 @@ const Services = () => {
             {/* Épargne d'argent */}
             <div className="grid md:grid-cols-2 gap-12 items-center mb-20 text-left">
               <div>
-                <h3 className="text-3xl font-bold text-blue-900 mb-4">Épargne d'argent</h3>
+                <h3 className="text-3xl font-bold text-blue-900 mb-4">{t("epargne_argent_title")}</h3>
                 <p className="text-gray-700 mb-4">
-                  Avec Wawa Cash, épargner devient simple et flexible. Votre portefeuille d'épargne vous permet de mettre de côté à votre rythme, sans formalités.
+                  {t("epargne_argent_p1")}
                 </p>
                 <p className="text-gray-700 mb-6">
-                  Que ce soit pour un projet ou une sécurité personnelle, votre argent est protégé, disponible et transparent. Un vrai coffre-fort numérique, toujours sous votre contrôle.
+                  {t("epargne_argent_p2")}
                 </p>
                 <Link to="#" className="text-blue-600 hover:underline font-medium flex items-center space-x-2">
-                  <span>Télécharger l'application</span>
+                  <span>{t("telecharger_application")}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                   </svg>
@@ -131,15 +134,15 @@ const Services = () => {
             {/* Gestion de portefeuille */}
             <div className="grid md:grid-cols-2 gap-12 items-center mb-20 text-left">
               <div className="md:order-1">
-                <h3 className="text-3xl font-bold text-blue-900 mb-4">Gestion de portefeuille</h3>
+                <h3 className="text-3xl font-bold text-blue-900 mb-4">{t("gestion_portefeuille_title")}</h3>
                 <p className="text-gray-700 mb-4">
-                  Avec Wawa Cash, gérez votre argent simplement et en toute sécurité. Suivez vos transferts, contrôlez vos dépenses et gardez le contrôle sur vos finances où que vous soyez.
+                  {t("gestion_portefeuille_p1")}
                 </p>
                 <p className="text-gray-700 mb-6">
-                  Wawa Cash, c'est plus qu'une application. C'est votre outil de gestion financière complet, du transfert à l'épargne.
+                  {t("gestion_portefeuille_p2")}
                 </p>
                 <Link to="#" className="text-blue-600 hover:underline font-medium flex items-center space-x-2">
-                  <span>Télécharger l'application</span>
+                  <span>{t("telecharger_application")}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                   </svg>
@@ -157,21 +160,20 @@ const Services = () => {
             {/* Un réseau qui relie la diaspora à l'Afrique */}
             <div className="text-center mb-20 py-20">
               <h3 className="text-4xl font-extrabold text-blue-900 mb-6">
-                Un réseau qui relie la diaspora à l'Afrique
+                {t("reseau_diaspora_title")}
               </h3>
               <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
-                Notre réseau couvre déjà la Côte d'Ivoire, le Mali, le Sénégal, le Bénin, le Cameroun, la Guinée, la RDC, le Niger, le Togo et le Burkina Faso, avec une expansion continue.
+                {t("reseau_diaspora_p1")}
               </p>
               <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
-                Rejoignez ceux qui nous font confiance pour leurs transferts quotidiens.
+                {t("reseau_diaspora_p2")}
               </p>
               <Link to="#" className="text-blue-600 hover:underline font-medium flex items-center justify-center space-x-2">
-                <span>Télécharger l'application</span>
+                <span>{t("telecharger_application")}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                 </svg>
               </Link>
-              {/* Placeholder for the map-like illustration with avatars */}
               <div className="relative w-full h-[32rem] rounded-xl mt-12 flex items-center justify-center">
                 <img
                   src="/services_groupe.png"

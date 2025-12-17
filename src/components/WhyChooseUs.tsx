@@ -1,6 +1,7 @@
 import React from 'react';
 import { Lock, ThumbsUp, Star, FileText, Zap, Clock } from 'lucide-react';
-import PhoneMockup from '@/components/PhoneMockup'; // Import the new PhoneMockup component
+import PhoneMockup from '@/components/PhoneMockup';
+import { useTranslation } from 'react-i18next';
 
 const FeatureCard = ({ icon: Icon, title, description, bgColor, textColor }: { icon: React.ElementType, title: string, description: string, bgColor: string, textColor: string }) => (
   <div className={`p-6 rounded-xl shadow-md ${bgColor} ${textColor} flex items-start space-x-4 h-full`}>
@@ -15,12 +16,14 @@ const FeatureCard = ({ icon: Icon, title, description, bgColor, textColor }: { i
 );
 
 const WhyChooseUs = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative bg-white py-20 px-8 overflow-hidden">
       <div className="relative z-10 max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-extrabold text-blue-900 mb-6">Pourquoi choisir WawaCash ?</h2>
+        <h2 className="text-4xl font-extrabold text-blue-900 mb-6">{t("pourquoi_choisir_wawacash")}</h2>
         <p className="text-lg text-gray-700 mb-16 max-w-2xl mx-auto">
-          Envoyer de l'argent d'un pays vers un autre est une opération sensible qui nécessite de recourir à une solution de transfert fiable. Wawa Cash a été pensée pour répondre à ces exigences.
+          {t("pourquoi_description")}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start mb-8">
@@ -28,21 +31,19 @@ const WhyChooseUs = () => {
           <div className="space-y-8">
             <FeatureCard
               icon={Lock}
-              title="Sécurité des transactions"
-              description="Vos transactions sont protégées par les dernières technologies de cryptage et de sécurité."
+              title={t("securite_transactions_title")}
+              description={t("securite_transactions_description")}
               bgColor="bg-purple-50"
               textColor="text-purple-800"
             />
             <FeatureCard
               icon={ThumbsUp}
-              title="Facilité d'utilisation"
-              description="Une interface intuitive et un processus simplifié pour envoyer de l'argent en quelques clics."
+              title={t("facilite_utilisation_title")}
+              description={t("facilite_utilisation_description")}
               bgColor="bg-blue-50"
               textColor="text-blue-800"
             />
-            {/* Image of person with phone */}
             <div className="rounded-xl overflow-hidden shadow-md">
-              {/* Replace with your actual image: /images/person-with-phone.jpg */}
               <img src="/home_why_1.png" alt="Person using phone" className="w-full h-auto object-cover" />
             </div>
           </div>
@@ -51,13 +52,12 @@ const WhyChooseUs = () => {
           <div className="space-y-8">
             <FeatureCard
               icon={FileText}
-              title="Tarifs transparents"
-              description="La grille tarifaire est claire et disponible avant chaque envoi. Vous avez une parfaite connaissance des frais d'envoi, du montant envoyé et celui reçu par vos proches."
+              title={t("tarifs_transparents_title")}
+              description={t("tarifs_transparents_description")}
               bgColor="bg-blue-50"
               textColor="text-blue-800"
             />
             <div className="rounded-xl overflow-hidden shadow-md">
-              {/* Replace with your actual image: /images/person-thumbs-up.jpg */}
               <img src="/home_why_2.png" alt="Person giving thumbs up" className="w-full h-auto object-cover" />
             </div>
           </div>
@@ -66,20 +66,18 @@ const WhyChooseUs = () => {
           <div className="space-y-8">
             <FeatureCard
               icon={Star}
-              title="Fiabilité du service"
-              description="Un service éprouvé et fiable pour des transferts sans accroc, à chaque fois."
+              title={t("fiabilite_service_title")}
+              description={t("fiabilite_service_description")}
               bgColor="bg-orange-50"
               textColor="text-orange-800"
             />
-            {/* Image of person giving thumbs up */}
             <div className="rounded-xl overflow-hidden shadow-md">
-              {/* Replace with your actual image: /images/person-thumbs-up.jpg */}
               <img src="/home_why_3.png" alt="Person giving thumbs up" className="w-full h-auto object-cover" />
             </div>
             <FeatureCard
               icon={Zap}
-              title="Rapidité d'envoi"
-              description="Les transferts sont traités en temps réel ou dans des délais très courts. Plus de longs délais d'attente, vos proches reçoivent l'argent en un temps record."
+              title={t("rapidite_envoi_title")}
+              description={t("rapidite_envoi_description")}
               bgColor="bg-green-50"
               textColor="text-green-800"
             />
@@ -90,8 +88,8 @@ const WhyChooseUs = () => {
         <div className="max-w-6xl mx-auto mt-8">
           <FeatureCard
             icon={Clock}
-            title="Assistance clientèle réactive"
-            description="Notre équipe est disponible pour vous aider à chaque étape de votre transfert."
+            title={t("assistance_clientele_title")}
+            description={t("assistance_clientele_description")}
             bgColor="bg-red-50"
             textColor="text-red-800"
           />

@@ -3,9 +3,11 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Play, Apple, Globe, Euro } from 'lucide-react';
-// import PhoneMockup from '@/components/PhoneMockup'; // Removed PhoneMockup import
+import { useTranslation } from 'react-i18next';
 
 const HeroSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative bg-gradient-to-b from-[#F5F9FF] via-[#D0E3FF] to-[#F5F9FF] from-blue-50 to-white py-20 px-8 overflow-hidden">
       {/* Background pattern - simplified with divs */}
@@ -15,13 +17,13 @@ const HeroSection = () => {
         <div className="absolute bottom-1/4 left-1/3 w-40 h-40 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center pt-20"> {/* Added pt-20 here */}
+      <div className="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center pt-20">
         <div className="text-center md:text-left">
           <h1 className="text-5xl md:text-6xl font-extrabold text-blue-900 leading-tight mb-6">
-            Transférez de l'argent, simplement et en toute sécurité
+            {t("hero_title")}
           </h1>
           <p className="text-lg text-gray-700 mb-8 max-w-lg mx-auto md:mx-0">
-            Avec Wawa Cash, envoyez de l'argent à vos proches en quelques clics. Rapide, fiable et sécurisé, notre service vous connecte à ceux qui comptent, où qu'ils se trouvent dans le monde.
+            {t("hero_description")}
           </p>
           <div className="flex justify-center md:justify-start space-x-4 mb-12">
             <a href="#" target="_blank" rel="noopener noreferrer">
@@ -35,7 +37,7 @@ const HeroSection = () => {
           <div className="bg-white p-6 rounded-xl shadow-lg max-w-md mx-auto md:mx-0">
             <div className="grid grid-cols-2 gap-4 mb-4">
               <div>
-                <label htmlFor="send-amount" className="block text-sm font-medium text-gray-700 mb-1">Vous envoyez</label>
+                <label htmlFor="send-amount" className="block text-sm font-medium text-gray-700 mb-1">{t("vous_envoyez")}</label>
                 <div className="flex items-center border rounded-md overflow-hidden">
                   <Input id="send-amount" type="number" defaultValue="100.00" className="border-none focus-visible:ring-0" />
                   <Select defaultValue="EUR">
@@ -50,7 +52,7 @@ const HeroSection = () => {
                 </div>
               </div>
               <div>
-                <label htmlFor="receive-amount" className="block text-sm font-medium text-gray-700 mb-1">Il reçoit</label>
+                <label htmlFor="receive-amount" className="block text-sm font-medium text-gray-700 mb-1">{t("il_recoit")}</label>
                 <div className="flex items-center border rounded-md overflow-hidden">
                   <Input id="receive-amount" type="number" defaultValue="60.000" className="border-none focus-visible:ring-0" />
                   <Select defaultValue="XOF">
@@ -65,7 +67,7 @@ const HeroSection = () => {
                 </div>
               </div>
             </div>
-            <p className="text-sm text-gray-500">Taux quotidien: 1 Euro = 655,90 XOF</p>
+            <p className="text-sm text-gray-500">{t("taux_quotidien")}</p>
           </div>
         </div>
 

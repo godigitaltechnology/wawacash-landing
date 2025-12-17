@@ -11,6 +11,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import CallToAction from '@/components/CallToAction';
 import { Lock, FileText, Clock, Phone, MapPin, Mail, Facebook, Linkedin, Instagram, Music } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 // Reusable FeatureCard for the "Une entreprise agréée" section
 const AboutFeatureCard = ({ icon: Icon, title, description, iconBgColor, iconTextColor }: { icon: React.ElementType, title: string, description: string, iconBgColor: string, iconTextColor: string }) => (
@@ -26,6 +27,8 @@ const AboutFeatureCard = ({ icon: Icon, title, description, iconBgColor, iconTex
 );
 
 const About = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -35,23 +38,23 @@ const About = () => {
           <div className="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div className="text-center md:text-left">
               <h1 className="text-5xl md:text-6xl font-extrabold text-blue-900 leading-tight mb-6">
-                À propos de WawaCash
+                {t("a_propos_wawacash_title")}
               </h1>
               <p className="text-lg text-gray-700 mb-4 max-w-lg mx-auto md:mx-0">
-                Wawa Cash est une solution de paiement pensée pour la diaspora africaine. Notre mission : <span className="font-semibold text-blue-700">rendre les transferts d'argent vers l'Afrique simples, rapides et sécurisés.</span>
+                {t("a_propos_wawacash_p1", { mission: t("a_propos_wawacash_mission") })}
               </p>
               <p className="text-lg text-gray-700 mb-8 max-w-lg mx-auto md:mx-0">
-                Chaque jour, des milliers d'Africains soutiennent leurs familles ou investissent au pays. Wawa Cash simplifie ces envois grâce à une plateforme moderne, fiable et accessible à tous.
+                {t("a_propos_wawacash_p2")}
               </p>
               <Link to="#" className="text-blue-600 hover:underline font-medium flex items-center justify-center md:justify-start space-x-2">
-                <span>Télécharger l'application</span>
+                <span>{t("telecharger_application")}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                 </svg>
               </Link>
             </div>
             <div className="flex justify-center md:justify-end">
-              <img src="/about_home.png" alt="Team WawaCash" className="w-full max-w-md rounded-3xl shadow-lg" />
+              <img src="/about_home.png" alt={t("about_home_alt")} className="w-full max-w-md rounded-3xl shadow-lg" />
             </div>
           </div>
         </section>
@@ -64,31 +67,31 @@ const About = () => {
           </div>
           <div className="relative z-10 max-w-6xl mx-auto text-center">
             <h2 className="text-4xl font-extrabold text-blue-900 mb-6">
-              Une entreprise agréée, gage de confiance
+              {t("entreprise_agreee_title")}
             </h2>
             <p className="text-lg text-gray-700 mb-16 max-w-2xl mx-auto">
-              Derrière Wawa Cash, se trouve une entreprise certifiée, respectant les normes internationales de sécurité financière. Nous plaçons la sécurité et la transparence au cœur de tout.
+              {t("entreprise_agreee_description")}
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
               <AboutFeatureCard
                 icon={Lock}
-                title="Sécurité maximale"
-                description="Vos transactions sont protégées par des protocoles de chiffrement avancés pour garantir la confidentialité de vos données."
+                title={t("securite_maximale_title")}
+                description={t("securite_maximale_description")}
                 iconBgColor="bg-purple-50"
                 iconTextColor="text-purple-800"
               />
               <AboutFeatureCard
                 icon={FileText}
-                title="Conformité garantie"
-                description="Nos systèmes sont audités régulièrement afin d'assurer une totale conformité et fiabilité de nos services."
+                title={t("conformite_garantie_title")}
+                description={t("conformite_garantie_description")}
                 iconBgColor="bg-orange-50"
                 iconTextColor="text-orange-800"
               />
               <AboutFeatureCard
                 icon={Clock}
-                title="Suivi en temps réel"
-                description="Gardez le contrôle sur chaque envoi grâce à un suivi instantané, du clic d'envoi jusqu'à la réception des fonds."
+                title={t("suivi_temps_reel_title")}
+                description={t("suivi_temps_reel_description")}
                 iconBgColor="bg-green-50"
                 iconTextColor="text-green-800"
               />
@@ -101,13 +104,13 @@ const About = () => {
           <div className="max-w-6xl mx-auto flex flex-col items-center">
             <div className="text-center mb-8">
               <h2 className="text-4xl font-extrabold text-blue-900 leading-tight mb-6">
-                Notre vision : rapprocher les communautés
+                {t("notre_vision_title")}
               </h2>
               <p className="text-lg text-gray-700 mb-8 max-w-lg mx-auto">
-                Chaque transfert est plus qu'une transaction — c'est un lien, un acte d'amour et de solidarité. Notre ambition est claire : faire de Wawa Cash le pont entre la diaspora africaine et leurs familles, grâce à une expérience fluide et accessible.
+                {t("notre_vision_description")}
               </p>
               <Link to="#" className="text-blue-600 hover:underline font-medium flex items-center justify-center space-x-2">
-                <span>Télécharger l'application</span>
+                <span>{t("telecharger_application")}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                 </svg>
@@ -116,7 +119,7 @@ const About = () => {
             <div className="relative w-full h-[30rem] rounded-xl mt-12 flex items-center justify-center">
                 <img
                   src="/about_happy.png"
-                  alt="Wawa Cash Services Screenshot"
+                  alt={t("about_happy_alt")}
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -130,58 +133,61 @@ const About = () => {
         <section className="relative bg-white from-blue-50 to-white py-20 px-8 overflow-hidden">
           <div className="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
             <div className="text-center md:text-left">
-              <h2 className="text-4xl font-extrabold text-blue-900 mb-6">Contactez-nous</h2>
+              <h2 className="text-4xl font-extrabold text-blue-900 mb-6">{t("contactez_nous_title")}</h2>
               <p className="text-lg text-gray-700 mb-8 max-w-lg mx-auto md:mx-0">
-                Chez Wawa Cash, nous restons à votre écoute. Une question, un besoin d'assistance ou un retour ? Notre équipe est là pour vous.
+                {t("contactez_nous_description")}
               </p>
               <div className="space-y-6 text-gray-700">
                 <div className="flex items-center space-x-3 justify-center md:justify-start">
                   <Phone className="h-6 w-6 text-blue-700" />
-                  <span>+1 215 909 1311</span>
+                  <span>{t("contact_phone")}</span>
                 </div>
                 <div className="flex items-center space-x-3 justify-center md:justify-start">
                   <MapPin className="h-6 w-6 text-blue-700" />
-                  <span>220 Laurel Rd, Sharon Hill, PA 19079, USA</span>
+                  <span>{t("contact_address")}</span>
                 </div>
                 <div className="flex items-center space-x-3 justify-center md:justify-start">
                   <Mail className="h-6 w-6 text-blue-700" />
-                  <span>customer@wawacash.com</span>
+                  <span>{t("contact_email")}</span>
                 </div>
               </div>
               <div className="mt-10 text-center md:text-left">
-                <h3 className="font-semibold text-xl text-blue-900 mb-4">Centre d'aide</h3>
+                <h3 className="font-semibold text-xl text-blue-900 mb-4">{t("centre_aide_title")}</h3>
                 <p className="text-gray-700 mb-4">
-                  Consultez notre FAQ 24h/24, 7j/7 pour trouver des réponses rapides à vos questions.
+                  {t("centre_aide_description")}
                 </p>
                 <Link to="/faqs" className="text-blue-600 hover:underline font-medium flex items-center justify-center md:justify-start space-x-2">
-                  <span>Allez au FAQs</span>
+                  <span>{t("allez_faqs")}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                  </svg>
-                </Link>
-              </div>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                </svg>
+              </Link>
             </div>
+          </div>
 
             <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md mx-auto">
-              <h3 className="text-2xl font-bold text-blue-900 mb-6 text-center">Remplissez le formulaire</h3>
+              <h3 className="text-2xl font-bold text-blue-900 mb-6 text-center">{t("remplissez_formulaire_title")}</h3>
               <form className="space-y-4">
                 <div>
-                  <Label htmlFor="name">Nom</Label>
-                  <Input id="name" placeholder="Entrez votre nom" />
+                  <Label htmlFor="name">{t("nom")}</Label>
+                  <Input id="name" placeholder={t("nom")} />
                 </div>
                 <div>
-                  <Label htmlFor="firstname">Prénom</Label>
-                  <Input id="firstname" placeholder="Entrez votre prénom" />
+                  <Label htmlFor="firstname">{t("prenom")}</Label>
+                  <Input id="firstname" placeholder={t("prenom")} />
                 </div>
                 <div>
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea id="message" placeholder="Saisissez votre message" rows={5} />
+                  <Label htmlFor="message">{t("message")}</Label>
+                  <Textarea id="message" placeholder={t("message")} rows={5} />
                 </div>
                 <p className="text-xs text-gray-500">
-                  En soumettant ce formulaire, vous acceptez que Wawa Cash utilise vos données pour répondre à votre demande. Consultez notre <Link to="/privacy" className="text-blue-600 hover:underline">politique de confidentialité</Link> et nos <Link to="/cgu" className="text-blue-600 hover:underline">conditions</Link> pour plus d'informations.
+                  {t("form_consent", {
+                    privacyLink: <Link to="/privacy" className="text-blue-600 hover:underline">{t("politique_confidentialite")}</Link>,
+                    termsLink: <Link to="/cgu" className="text-blue-600 hover:underline">{t("conditions")}</Link>
+                  })}
                 </p>
                 <Button type="submit" className="w-full bg-blue-700 hover:bg-blue-800 text-white">
-                  Envoyez
+                  {t("envoyez")}
                 </Button>
               </form>
             </div>
@@ -191,9 +197,9 @@ const About = () => {
         {/* Suivez Wawa Cash Section */}
         <section className="bg-white py-20 px-8 text-center">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-extrabold text-blue-900 mb-6">Suivez Wawa Cash</h2>
+            <h2 className="text-4xl font-extrabold text-blue-900 mb-6">{t("suivez_wawacash_title")}</h2>
             <p className="text-lg text-gray-700 mb-10">
-              Soyez les premiers informés des nouveautés sur Wawa Cash, des dernières mises à jour de nos produits et bien plus encore en nous suivant sur nos réseaux sociaux.
+              {t("suivez_wawacash_description")}
             </p>
             <div className="flex justify-center space-x-6">
               <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-700">
@@ -203,7 +209,7 @@ const About = () => {
                 <Linkedin className="h-8 w-8" />
               </a>
               <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-700">
-                <Music className="h-8 w-8" /> {/* Using Music icon for TikTok */}
+                <Music className="h-8 w-8" />
               </a>
               <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-700">
                 <Instagram className="h-8 w-8" />
