@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -63,12 +63,18 @@ const rawFaqs = [
 ];
 
 const FAQs = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const categoryKeys = ["tous", "general", "wawa_send", "securite", "compte", "tarifs_faq", "assistance"];
-  const translatedCategories = categoryKeys.map(key => t(key));
-
+  
   const [activeCategory, setActiveCategory] = useState(t("tous"));
   const [searchTerm, setSearchTerm] = useState("");
+
+  // Update activeCategory when language changes
+  useEffect(() => {
+    setActiveCategory(t("tous"));
+  }, [i18n.language, t]);
+
+  const translatedCategories = categoryKeys.map(key => t(key));
 
   const filteredAndTranslatedFaqs = rawFaqs
     .filter(faq => {
