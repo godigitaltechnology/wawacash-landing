@@ -54,7 +54,7 @@ const About = () => {
               </Link>
             </div>
             <div className="flex justify-center md:justify-end">
-              <img src="/about_home.png" alt="Team WawaCash" className="w-full max-w-md rounded-3xl shadow-lg" />
+              <img src="/about_home.png" alt={t("about_home_alt")} className="w-full max-w-md rounded-3xl shadow-lg" />
             </div>
           </div>
         </section>
@@ -119,7 +119,7 @@ const About = () => {
             <div className="relative w-full h-[30rem] rounded-xl mt-12 flex items-center justify-center">
                 <img
                   src="/about_happy.png"
-                  alt="Wawa Cash Services Screenshot"
+                  alt={t("about_happy_alt")}
                   className="w-full h-full object-contain"
                 />
               </div>
