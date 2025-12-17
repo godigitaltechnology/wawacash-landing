@@ -8,7 +8,8 @@ import Services from "./pages/Services";
 import About from "./pages/About";
 import FAQs from "./pages/FAQs";
 import Support from "./pages/Support";
-import Tarifs from "./pages/Tarifs"; // Import the new Tarifs page
+import Tarifs from "./pages/Tarifs";
+import MentionsLegales from "./pages/MentionsLegales"; // Import the new MentionsLegales page
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,7 +26,8 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/faqs" element={<FAQs />} />
           <Route path="/support" element={<Support />} />
-          <Route path="/tarifs" element={<Tarifs />} /> {/* Add the new Tarifs route */}
+          <Route path="/tarifs" element={<Tarifs />} />
+          <Route path="/mentions" element={<MentionsLegales />} /> {/* Add the new MentionsLegales route */}
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
