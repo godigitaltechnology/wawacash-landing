@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <nav className="absolute top-0 left-0 w-full z-50 py-4 px-8">
-      <div className="container mx-auto max-w-8xl grid grid-cols-3 items-center">
+      <div className="container mx-auto max-w-8xl flex justify-between items-center md:grid md:grid-cols-3"> {/* Modifié ici pour utiliser flex sur mobile et grid sur desktop */}
 
         {/* Col 1 — Logo */}
         <div className="flex items-center">
@@ -73,7 +73,7 @@ const Navbar = () => {
         </div>
 
         {/* Col 3 — Burger (mobile) */}
-        <div className="md:hidden flex justify-end">
+        <div className="md:hidden"> {/* Supprimé 'flex justify-end' car le parent gère déjà le positionnement */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="text-gray-900">
