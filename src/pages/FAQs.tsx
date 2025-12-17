@@ -14,66 +14,78 @@ import FAQCategories from '@/components/FAQCategories';
 import { Phone, MapPin, Mail, Facebook, Linkedin, Instagram, Music, Search } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
-const allFaqs = [
+const rawFaqs = [
   {
-    question: "Qu'est-ce que Wawa Cash ?",
-    answer: "Wawa Cash est une plateforme de transfert d'argent rapide, sécurisée et fiable, vous permettant d'envoyer de l'argent à vos proches partout dans le monde en quelques clics.",
-    category: "Général"
+    questionKey: "faq_q1",
+    answerKey: "faq_a1",
+    categoryKey: "general"
   },
   {
-    question: "Qu'est-ce que Wawa Send ?",
-    answer: "Wawa Send est notre service dédié aux envois d'argent internationaux, garantissant que vos fonds arrivent à destination rapidement et en toute sécurité.",
-    category: "Wawa Send"
+    questionKey: "faq_q2",
+    answerKey: "faq_a2",
+    categoryKey: "wawa_send"
   },
   {
-    question: "Quels pays sont desservis par Wawa Cash ?",
-    answer: "Wawa Cash dessert un large éventail de pays à travers le monde. Vous pouvez consulter la liste complète des pays disponibles sur notre page de services.",
-    category: "Général"
+    questionKey: "faq_q3",
+    answerKey: "faq_a3",
+    categoryKey: "general"
   },
   {
-    question: "Comment créer un compte Wawa Cash ?",
-    answer: "Pour créer un compte Wawa Cash, téléchargez notre application mobile depuis le Play Store ou l'App Store, puis suivez les étapes d'inscription simples et rapides.",
-    category: "Compte"
+    questionKey: "faq_q4",
+    answerKey: "faq_a4",
+    categoryKey: "compte"
   },
   {
-    question: "Quels documents sont nécessaires pour ouvrir un compte ?",
-    answer: "Pour ouvrir un compte, vous aurez généralement besoin d'une pièce d'identité valide (carte d'identité, passeport) et d'une preuve de résidence. Les exigences peuvent varier selon votre pays.",
-    category: "Compte"
+    questionKey: "faq_q5",
+    answerKey: "faq_a5",
+    categoryKey: "compte"
   },
   {
-    question: "Puis-je envoyer de l'argent sans compte bancaire ?",
-    answer: "Oui, Wawa Cash offre des options pour envoyer de l'argent même si vous n'avez pas de compte bancaire, via nos partenaires de paiement locaux.",
-    category: "Wawa Send"
+    questionKey: "faq_q6",
+    answerKey: "faq_a6",
+    categoryKey: "wawa_send"
   },
   {
-    question: "Comment sont calculés les frais de transfert ?",
-    answer: "Les frais de transfert sont calculés en fonction du montant envoyé et du pays de destination. Notre grille tarifaire est transparente et affichée avant chaque transaction.",
-    category: "Tarifs"
+    questionKey: "faq_q7",
+    answerKey: "faq_a7",
+    categoryKey: "tarifs_faq"
   },
   {
-    question: "Est-ce que mes informations personnelles sont sécurisées ?",
-    answer: "Absolument. Nous utilisons des protocoles de chiffrement avancés et respectons les normes RGPD pour garantir la confidentialité et la sécurité de vos données.",
-    category: "Sécurité"
+    questionKey: "faq_q8",
+    answerKey: "faq_a8",
+    categoryKey: "securite"
   },
   {
-    question: "Que faire en cas de problème avec un transfert ?",
-    answer: "En cas de problème, veuillez contacter notre service client via le formulaire de contact ou par téléphone. Notre équipe d'assistance est disponible pour vous aider.",
-    category: "Assistance"
+    questionKey: "faq_q9",
+    answerKey: "faq_a9",
+    categoryKey: "assistance"
   },
 ];
 
 const FAQs = () => {
   const { t } = useTranslation();
-  const categories = [t("tous"), t("general"), t("wawa_send"), t("securite"), t("compte"), t("tarifs_faq"), t("assistance")];
+  const categoryKeys = ["tous", "general", "wawa_send", "securite", "compte", "tarifs_faq", "assistance"];
+  const translatedCategories = categoryKeys.map(key => t(key));
+
   const [activeCategory, setActiveCategory] = useState(t("tous"));
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredFaqs = allFaqs.filter(faq => {
-    const matchesCategory = activeCategory === t("tous") || faq.category === activeCategory;
-    const matchesSearch = faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          faq.answer.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+  const filteredAndTranslatedFaqs = rawFaqs
+    .filter(faq => {
+      const translatedCategory = t(faq.categoryKey);
+      const matchesCategory = activeCategory === t("tous") || translatedCategory === activeCategory;
+      return matchesCategory;
+    })
+    .map(faq => ({
+      question: t(faq.questionKey),
+      answer: t(faq.answerKey),
+      category: t(faq.categoryKey)
+    }))
+    .filter(faq => {
+      const matchesSearch = faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                            faq.answer.toLowerCase().includes(searchTerm.toLowerCase());
+      return matchesSearch;
+    });
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -105,11 +117,11 @@ const FAQs = () => {
         <section className="bg-white py-20 px-8">
           <div className="max-w-4xl mx-auto text-center">
             <FAQCategories
-              categories={categories}
+              categories={translatedCategories}
               activeCategory={activeCategory}
               onCategoryChange={setActiveCategory}
             />
-            <FAQSection faqs={filteredFaqs} showTitle={false} />
+            <FAQSection faqs={filteredAndTranslatedFaqs} showTitle={false} />
           </div>
         </section>
 

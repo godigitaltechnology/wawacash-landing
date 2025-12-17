@@ -24,7 +24,7 @@ i18n
   .use(initReactI18next) // Passe l'instance i18n à react-i18next
   .init({
     resources,
-    fallbackLng: 'fr', // Langue par défaut si la détection échoue ou si une traduction manque
+    fallbackLng: 'en', // Langue par défaut si la détection échoue ou si une traduction manque
     debug: false, // Mettez à true pour le débogage
     interpolation: {
       escapeValue: false, // React protège déjà contre les attaques XSS
