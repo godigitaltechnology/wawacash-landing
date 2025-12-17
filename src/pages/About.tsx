@@ -140,15 +140,15 @@ const About = () => {
               <div className="space-y-6 text-gray-700">
                 <div className="flex items-center space-x-3 justify-center md:justify-start">
                   <Phone className="h-6 w-6 text-blue-700" />
-                  <span>+1 215 909 1311</span>
+                  <span>{t("contact_phone")}</span>
                 </div>
                 <div className="flex items-center space-x-3 justify-center md:justify-start">
                   <MapPin className="h-6 w-6 text-blue-700" />
-                  <span>220 Laurel Rd, Sharon Hill, PA 19079, USA</span>
+                  <span>{t("contact_address")}</span>
                 </div>
                 <div className="flex items-center space-x-3 justify-center md:justify-start">
                   <Mail className="h-6 w-6 text-blue-700" />
-                  <span>customer@wawacash.com</span>
+                  <span>{t("contact_email")}</span>
                 </div>
               </div>
               <div className="mt-10 text-center md:text-left">
@@ -159,11 +159,11 @@ const About = () => {
                 <Link to="/faqs" className="text-blue-600 hover:underline font-medium flex items-center justify-center md:justify-start space-x-2">
                   <span>{t("allez_faqs")}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                  </svg>
-                </Link>
-              </div>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                </svg>
+              </Link>
             </div>
+          </div>
 
             <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md mx-auto">
               <h3 className="text-2xl font-bold text-blue-900 mb-6 text-center">{t("remplissez_formulaire_title")}</h3>
