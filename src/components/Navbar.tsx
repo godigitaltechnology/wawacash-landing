@@ -13,7 +13,7 @@ const Navbar = () => {
   const languages = {
     fr: { name: t('francais'), flag: "/flag/fr.png" },
     en: { name: t('english'), flag: "/flag/en.png" },
-    es: { name: t('espanol'), flag: "/flag/es.png" },
+    // es: { name: t('espanol'), flag: "/flag/es.png" }, // Supprimé
   };
 
   const currentLanguage = languages[i18n.language as keyof typeof languages] || languages.fr;

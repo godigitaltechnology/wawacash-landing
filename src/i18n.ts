@@ -5,7 +5,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 // Importez vos fichiers de traduction
 import translationFR from '../public/locales/fr/translation.json';
 import translationEN from '../public/locales/en/translation.json';
-import translationES from '../public/locales/es/translation.json';
+// import translationES from '../public/locales/es/translation.json'; // Supprimé
 
 const resources = {
   fr: {
@@ -14,9 +14,9 @@ const resources = {
   en: {
     translation: translationEN,
   },
-  es: {
-    translation: translationES,
-  },
+  // es: { // Supprimé
+  //   translation: translationES,
+  // },
 };
 
 i18n
