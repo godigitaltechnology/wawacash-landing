@@ -67,5 +67,15 @@
   "faq_q8": "¿Está segura mi información personal?",
   "faq_a8": "Absolutamente. Utilizamos protocolos de cifrado avanzados y cumplimos con los estándares GDPR para garantizar la confidencialidad y seguridad de tus datos.",
   "faq_q9": "¿Qué hacer en caso de un problema con una transferencia?",
-  "faq_a9": "En caso de un problema, por favor contacta a nuestro servicio de atención al cliente a través del formulario de contacto o por teléfono. Nuestro equipo de soporte está disponible para ayudarte."
+  "faq_a9": "En caso de un problema, por favor contacta a nuestro servicio de atención al cliente a través del formulario de contacto o por teléfono. Nuestro equipo de soporte está disponible para ayudarte.",
+  "tarifs_page_title": "Nuestras Tarifas: Transparencia y Sencillez",
+  "tarifs_page_description": "Descubre nuestras tarifas claras y sin sorpresas. Con Wawa Cash, siempre sabes cuánto envías y cuánto reciben tus seres queridos.",
+  "tarifs_details_title": "Detalles de las Tarifas por Servicio",
+  "tarifs_standard_title": "Transferencia Estándar",
+  "tarifs_standard_description": "Tarifas competitivas para tus envíos regulares. Ideal para apoyar a tus seres queridos a diario.",
+  "tarifs_premium_title": "Transferencia Express",
+  "tarifs_premium_description": "Necesitas rapidez? Opta por nuestro servicio premium con tiempos de procesamiento reducidos.",
+  "tarifs_entreprise_title": "Cuentas Profesionales",
+  "tarifs_entreprise_description": "Soluciones adaptadas a empresas y grandes volúmenes de transacciones. Contáctanos para una oferta personalizada.",
+  "voir_details": "Ver detalles"
 }

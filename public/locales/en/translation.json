@@ -76,7 +76,7 @@
   "footer_informations_legales_title": "Legal Information",
   "footer_about": "About",
   "footer_services": "Services",
-  "footer_tariffs": "Rates",
+  "footer_tarifs": "Rates",
   "footer_support": "Support",
   "footer_faqs": "FAQs",
   "footer_policy": "Refund & Return Policy",
@@ -152,5 +152,15 @@
   "faq_q8": "Is my personal information secure?",
   "faq_a8": "Absolutely. We use advanced encryption protocols and comply with GDPR standards to ensure the confidentiality and security of your data.",
   "faq_q9": "What to do in case of a problem with a transfer?",
-  "faq_a9": "In case of a problem, please contact our customer service via the contact form or by phone. Our support team is available to assist you."
+  "faq_a9": "In case of a problem, please contact our customer service via the contact form or by phone. Our support team is available to assist you.",
+  "tarifs_page_title": "Our Rates: Transparency and Simplicity",
+  "tarifs_page_description": "Discover our clear and straightforward pricing. With Wawa Cash, you always know how much you send and how much your loved ones receive.",
+  "tarifs_details_title": "Pricing Details by Service",
+  "tarifs_standard_title": "Standard Transfer",
+  "tarifs_standard_description": "Competitive fees for your regular transfers. Ideal for supporting your loved ones daily.",
+  "tarifs_premium_title": "Express Transfer",
+  "tarifs_premium_description": "Need speed? Opt for our premium service with reduced processing times.",
+  "tarifs_entreprise_title": "Business Accounts",
+  "tarifs_entreprise_description": "Solutions tailored for businesses and high-volume transactions. Contact us for a personalized offer.",
+  "voir_details": "View Details"
 }

@@ -76,7 +76,7 @@
   "footer_informations_legales_title": "Informations légales",
   "footer_about": "À propos",
   "footer_services": "Services",
-  "footer_tariffs": "Tarifs",
+  "footer_tarifs": "Tarifs",
   "footer_support": "Support",
   "footer_faqs": "FAQs",
   "footer_policy": "Politique de Rem. & Réc.",
@@ -152,5 +152,15 @@
   "faq_q8": "Est-ce que mes informations personnelles sont sécurisées ?",
   "faq_a8": "Absolument. Nous utilisons des protocoles de chiffrement avancés et respectons les normes RGPD pour garantir la confidentialité et la sécurité de vos données.",
   "faq_q9": "Que faire en cas de problème avec un transfert ?",
-  "faq_a9": "En cas de problème, veuillez contacter notre service client via le formulaire de contact ou par téléphone. Notre équipe d'assistance est disponible pour vous aider."
+  "faq_a9": "En cas de problème, veuillez contacter notre service client via le formulaire de contact ou par téléphone. Notre équipe d'assistance est disponible pour vous aider.",
+  "tarifs_page_title": "Nos Tarifs : Transparence et Simplicité",
+  "tarifs_page_description": "Découvrez nos grilles tarifaires claires et sans surprise. Avec Wawa Cash, vous savez toujours combien vous envoyez et combien vos proches reçoivent.",
+  "tarifs_details_title": "Détails des Tarifs par Service",
+  "tarifs_standard_title": "Transfert Standard",
+  "tarifs_standard_description": "Des frais compétitifs pour vos envois réguliers. Idéal pour soutenir vos proches au quotidien.",
+  "tarifs_premium_title": "Transfert Express",
+  "tarifs_premium_description": "Besoin de rapidité ? Optez pour notre service premium avec des délais de traitement réduits.",
+  "tarifs_entreprise_title": "Comptes Professionnels",
+  "tarifs_entreprise_description": "Des solutions adaptées aux entreprises et aux gros volumes de transactions. Contactez-nous pour une offre personnalisée.",
+  "voir_details": "Voir les détails"
 }

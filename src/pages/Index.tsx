@@ -9,41 +9,47 @@ import Footer from '@/components/Footer';
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import { useTranslation } from 'react-i18next';
 
-const sampleFaqs = [
+const rawSampleFaqs = [
   {
-    question: "Qu'est-ce que Wawa Cash ?",
-    answer: "Wawa Cash est une plateforme de transfert d'argent rapide, sécurisée et fiable, vous permettant d'envoyer de l'argent à vos proches partout dans le monde en quelques clics.",
-    category: "Général"
+    questionKey: "faq_q1",
+    answerKey: "faq_a1",
+    categoryKey: "general"
   },
   {
-    question: "Qu'est-ce que Wawa Send ?",
-    answer: "Wawa Send est notre service dédié aux envois d'argent internationaux, garantissant que vos fonds arrivent à destination rapidement et en toute sécurité.",
-    category: "Wawa Send"
+    questionKey: "faq_q2",
+    answerKey: "faq_a2",
+    categoryKey: "wawa_send"
   },
   {
-    question: "Quels pays sont desservis par Wawa Cash ?",
-    answer: "Wawa Cash dessert un large éventail de pays à travers le monde. Vous pouvez consulter la liste complète des pays disponibles sur notre page de services.",
-    category: "Général"
+    questionKey: "faq_q3",
+    answerKey: "faq_a3",
+    categoryKey: "general"
   },
   {
-    question: "Comment créer un compte Wawa Cash ?",
-    answer: "Pour créer un compte Wawa Cash, téléchargez notre application mobile depuis le Play Store ou l'App Store, puis suivez les étapes d'inscription simples et rapides.",
-    category: "Compte"
+    questionKey: "faq_q4",
+    answerKey: "faq_a4",
+    categoryKey: "compte"
   },
   {
-    question: "Quels documents sont nécessaires pour ouvrir un compte ?",
-    answer: "Pour ouvrir un compte, vous aurez généralement besoin d'une pièce d'identité valide (carte d'identité, passeport) et d'une preuve de résidence. Les exigences peuvent varier selon votre pays.",
-    category: "Compte"
+    questionKey: "faq_q5",
+    answerKey: "faq_a5",
+    categoryKey: "compte"
   },
   {
-    question: "Puis-je envoyer de l'argent sans compte bancaire ?",
-    answer: "Oui, Wawa Cash offre des options pour envoyer de l'argent même si vous n'avez pas de compte bancaire, via nos partenaires de paiement locaux.",
-    category: "Wawa Send"
+    questionKey: "faq_q6",
+    answerKey: "faq_a6",
+    categoryKey: "wawa_send"
   },
 ];
 
 const Index = () => {
   const { t } = useTranslation();
+
+  const translatedSampleFaqs = rawSampleFaqs.map(faq => ({
+    question: t(faq.questionKey),
+    answer: t(faq.answerKey),
+    category: t(faq.categoryKey)
+  }));
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -54,7 +60,7 @@ const Index = () => {
         <CallToAction />
         <section className="bg-white py-20 px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <FAQSection faqs={sampleFaqs} showTitle={true} />
+            <FAQSection faqs={translatedSampleFaqs} showTitle={true} />
             <Link to="/faqs" className="inline-flex items-center text-blue-600 hover:underline font-medium mt-8 space-x-2">
               <span>{t("voir_toute_liste")}</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">

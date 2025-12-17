@@ -22,7 +22,7 @@ const Navbar = () => {
     { to: "/", label: t("accueil") },
     { to: "/about", label: t("a_propos") },
     { to: "/services", label: t("services") },
-    { to: "/tariffs", label: t("tarifs") },
+    { to: "/tarifs", label: t("tarifs") }, 
     { to: "/blog", label: t("blog") },
     { to: "/faqs", label: t("faqs") },
     { to: "/support", label: t("support") },
