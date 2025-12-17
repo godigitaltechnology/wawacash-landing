@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link
+import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import WhyChooseUs from '@/components/WhyChooseUs';
@@ -7,6 +7,7 @@ import CallToAction from '@/components/CallToAction';
 import FAQSection from '@/components/FAQSection';
 import Footer from '@/components/Footer';
 import { MadeWithDyad } from "@/components/made-with-dyad";
+import { useTranslation } from 'react-i18next';
 
 const sampleFaqs = [
   {
@@ -42,6 +43,8 @@ const sampleFaqs = [
 ];
 
 const Index = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -49,11 +52,11 @@ const Index = () => {
         <HeroSection />
         <WhyChooseUs />
         <CallToAction />
-        <section className="bg-white py-20 px-8"> {/* Added section for consistent padding */}
+        <section className="bg-white py-20 px-8">
           <div className="max-w-4xl mx-auto text-center">
             <FAQSection faqs={sampleFaqs} showTitle={true} />
             <Link to="/faqs" className="inline-flex items-center text-blue-600 hover:underline font-medium mt-8 space-x-2">
-              <span>Voir toute la liste</span>
+              <span>{t("voir_toute_liste")}</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
               </svg>

@@ -10,8 +10,9 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import FAQSection from '@/components/FAQSection';
-import FAQCategories from '@/components/FAQCategories'; // Import the new FAQCategories component
+import FAQCategories from '@/components/FAQCategories';
 import { Phone, MapPin, Mail, Facebook, Linkedin, Instagram, Music, Search } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const allFaqs = [
   {
@@ -62,12 +63,13 @@ const allFaqs = [
 ];
 
 const FAQs = () => {
-  const categories = ["Tous", "Général", "Wawa Send", "Sécurité", "Compte", "Tarifs", "Assistance"];
-  const [activeCategory, setActiveCategory] = useState("Tous");
+  const { t } = useTranslation();
+  const categories = [t("tous"), t("general"), t("wawa_send"), t("securite"), t("compte"), t("tarifs_faq"), t("assistance")];
+  const [activeCategory, setActiveCategory] = useState(t("tous"));
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredFaqs = allFaqs.filter(faq => {
-    const matchesCategory = activeCategory === "Tous" || faq.category === activeCategory;
+    const matchesCategory = activeCategory === t("tous") || faq.category === activeCategory;
     const matchesSearch = faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           faq.answer.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesCategory && matchesSearch;
@@ -81,15 +83,15 @@ const FAQs = () => {
         <section className="relative bg-gradient-to-b from-blue-50 to-white py-20 px-8 overflow-hidden pt-32">
           <div className="relative z-10 max-w-6xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-extrabold text-blue-900 leading-tight mb-6">
-              FAQs
+              {t("faqs_hero_title")}
             </h1>
             <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-              Trouvez des réponses rapides à vos questions les plus fréquentes sur Wawa Cash, nos services, la sécurité et bien plus encore.
+              {t("faqs_hero_description")}
             </p>
             <div className="relative max-w-lg mx-auto">
               <Input
                 type="text"
-                placeholder="Rechercher une question..."
+                placeholder={t("rechercher_question")}
                 className="w-full pl-10 pr-4 py-2 rounded-full border-2 border-blue-200 focus:border-blue-500 focus-visible:ring-0"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -114,9 +116,9 @@ const FAQs = () => {
         {/* Suivez Wawa Cash Section */}
         <section className="bg-white py-20 px-8 text-center">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-extrabold text-blue-900 mb-6">Suivez Wawa Cash</h2>
+            <h2 className="text-4xl font-extrabold text-blue-900 mb-6">{t("suivez_wawacash_title")}</h2>
             <p className="text-lg text-gray-700 mb-10">
-              Soyez les premiers informés des nouveautés sur Wawa Cash, des dernières mises à jour de nos produits et bien plus encore en nous suivant sur nos réseaux sociaux.
+              {t("suivez_wawacash_description")}
             </p>
             <div className="flex justify-center space-x-6">
               <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-700">
@@ -126,7 +128,7 @@ const FAQs = () => {
                 <Linkedin className="h-8 w-8" />
               </a>
               <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-700">
-                <Music className="h-8 w-8" /> {/* Using Music icon for TikTok */}
+                <Music className="h-8 w-8" />
               </a>
               <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-700">
                 <Instagram className="h-8 w-8" />

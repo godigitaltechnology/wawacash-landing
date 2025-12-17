@@ -2,8 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Facebook, Linkedin, Instagram, Play, Apple, Music } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-footer-background text-white py-16 px-8">
       <div className="max-w-6xl mx-auto">
@@ -12,50 +15,50 @@ const Footer = () => {
           {/* Logo and Social Icons */}
           <div className="col-span-1 md:col-span-3 flex flex-col items-start">
             <Link to="/" className="flex items-center mb-6">
-              <img src="/logo_light.png" alt="WawaCash Logo" className="h-10" /> {/* Integrated logo */}
+              <img src="/logo_light.png" alt="WawaCash Logo" className="h-10" />
             </Link>
           </div>
 
           {/* Wawa Cash Links */}
           <div className="col-span-1 md:col-span-2">
-            <h4 className="font-semibold text-lg mb-4">Wawa Cash</h4>
+            <h4 className="font-semibold text-lg mb-4">{t("footer_wawacash_title")}</h4>
             <ul className="space-y-2 text-gray-300 text-sm">
-              <li><Link to="/about" className="hover:text-white">À propos</Link></li>
-              <li><Link to="/services" className="hover:text-white">Services</Link></li>
-              <li><Link to="/tariffs" className="hover:text-white">Tarifs</Link></li>
+              <li><Link to="/about" className="hover:text-white">{t("footer_about")}</Link></li>
+              <li><Link to="/services" className="hover:text-white">{t("footer_services")}</Link></li>
+              <li><Link to="/tariffs" className="hover:text-white">{t("footer_tariffs")}</Link></li>
             </ul>
           </div>
 
           {/* Assistance & Ressources Links */}
           <div className="col-span-1 md:col-span-2">
-            <h4 className="font-semibold text-lg mb-4">Assistance & Ressources</h4>
+            <h4 className="font-semibold text-lg mb-4">{t("footer_assistance_title")}</h4>
             <ul className="space-y-2 text-gray-300 text-sm">
-              <li><Link to="/support" className="hover:text-white">Support</Link></li>
-              <li><Link to="/faqs" className="hover:text-white">FAQs</Link></li>
-              <li><Link to="/policy" className="hover:text-white">Politique de Rem. & Réc.</Link></li>
+              <li><Link to="/support" className="hover:text-white">{t("footer_support")}</Link></li>
+              <li><Link to="/faqs" className="hover:text-white">{t("footer_faqs")}</Link></li>
+              <li><Link to="/policy" className="hover:text-white">{t("footer_policy")}</Link></li>
             </ul>
           </div>
 
           {/* Confidentialité & Sécurité Links */}
           <div className="col-span-1 md:col-span-3">
-            <h4 className="font-semibold text-lg mb-4">Confidentialité & Sécurité</h4>
+            <h4 className="font-semibold text-lg mb-4">{t("footer_confidentialite_title")}</h4>
             <ul className="space-y-2 text-gray-300 text-sm">
-              <li><Link to="/privacy" className="hover:text-white">Politique de Confidentialité & RGPD</Link></li>
-              <li><Link to="/kyc" className="hover:text-white">Politique KYC</Link></li>
-              <li><Link to="/lcbft" className="hover:text-white">Politique LCBFT</Link></li>
-              <li><Link to="/security" className="hover:text-white">Politique de Sécurité des Transactions</Link></li>
+              <li><Link to="/privacy" className="hover:text-white">{t("footer_privacy")}</Link></li>
+              <li><Link to="/kyc" className="hover:text-white">{t("footer_kyc")}</Link></li>
+              <li><Link to="/lcbft" className="hover:text-white">{t("footer_lcbft")}</Link></li>
+              <li><Link to="/security" className="hover:text-white">{t("footer_security")}</Link></li>
             </ul>
           </div>
 
           {/* Informations légales Links */}
           <div className="col-span-1 md:col-span-2">
-            <h4 className="font-semibold text-lg mb-4">Informations légales</h4>
+            <h4 className="font-semibold text-lg mb-4">{t("footer_informations_legales_title")}</h4>
             <ul className="space-y-2 text-gray-300 text-sm">
-              <li><Link to="/mentions" className="hover:text-white">Mentions légales</Link></li>
-              <li><Link to="/cgu" className="hover:text-white">CGU</Link></li>
-              <li><Link to="/covicos" className="hover:text-white">COVICOS</Link></li>
-              <li><Link to="/cgv" className="hover:text-white">CGV/CGS</Link></li>
-              <li><Link to="/charte" className="hover:text-white">Charte d'utilisation responsable</Link></li>
+              <li><Link to="/mentions" className="hover:text-white">{t("footer_mentions")}</Link></li>
+              <li><Link to="/cgu" className="hover:text-white">{t("footer_cgu")}</Link></li>
+              <li><Link to="/covicos" className="hover:text-white">{t("footer_covicos")}</Link></li>
+              <li><Link to="/cgv" className="hover:text-white">{t("footer_cgv")}</Link></li>
+              <li><Link to="/charte" className="hover:text-white">{t("footer_charte")}</Link></li>
             </ul>
           </div>
         </div>
@@ -94,9 +97,9 @@ const Footer = () => {
         <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center md:items-end space-y-8 md:space-y-0">
           <div className="text-sm text-gray-400 text-center md:text-left">
             <p className="mb-4">
-              Ce service t'es proposé par WawaCash, ses différentes entités telles que WawaCash Canada, société enregistrée au Canada sous le numéro d'enregistrement XXXXXXXX, ainsi que ses différents partenaires. Pour plus d'informations, tu peux consulter les conditions générales d'accès à WawaCash et notre politique sur les données personnelles.
+              {t("footer_disclaimer")}
             </p>
-            <p>© 2025 WawaCash</p>
+            <p>{t("footer_copyright")}</p>
           </div>
         </div>
       </div>
