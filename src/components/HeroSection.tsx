@@ -7,42 +7,70 @@ import { useTranslation } from 'react-i18next';
 
 const HeroSection = () => {
   const { t, i18n } = useTranslation();
-  const exchangeRate = parseFloat(t("exchange_rate_value"));
 
-  const [eurAmount, setEurAmount] = useState<string>("100.00");
-  const [xofAmount, setXofAmount] = useState<string>(
-    (100 * exchangeRate).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })
-  );
+  const getExchangeRate = (currency: string) => {
+    switch (currency) {
+      case 'EUR':
+        return parseFloat(t("eur_to_xof_rate"));
+      case 'USD':
+        return parseFloat(t("usd_to_xof_rate"));
+      case 'CAD':
+        return parseFloat(t("cad_to_xof_rate"));
+      default:
+        return 0;
+    }
+  };
 
+  const [sendCurrency, setSendCurrency] = useState<string>("EUR");
+  const [sendAmount, setSendAmount] = useState<string>("100.00");
+  const [receiveAmount, setReceiveAmount] = useState<string>("");
+
+  // Effect to update receiveAmount when sendAmount or sendCurrency changes
   useEffect(() => {
-    // Update XOF amount when EUR amount changes (e.g., initial load or language change)
-    const eur = parseFloat(eurAmount);
-    if (!isNaN(eur)) {
-      setXofAmount((eur * exchangeRate).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }));
+    const rate = getExchangeRate(sendCurrency);
+    const send = parseFloat(sendAmount);
+    if (!isNaN(send) && rate > 0) {
+      setReceiveAmount((send * rate).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }));
+    } else {
+      setReceiveAmount("");
     }
-  }, [exchangeRate, eurAmount]); // Re-run when exchangeRate or eurAmount changes
+  }, [sendAmount, sendCurrency, i18n.language]); // Re-run when language changes too
 
-  const handleEurChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSendAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    setEurAmount(value);
-    const eur = parseFloat(value);
-    if (!isNaN(eur)) {
-      setXofAmount((eur * exchangeRate).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }));
+    // Allow only numbers and a single decimal point
+    const cleanedValue = value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+    setSendAmount(cleanedValue);
+  };
+
+  const handleReceiveAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    // Allow only numbers (XOF typically doesn't use decimals)
+    const cleanedValue = value.replace(/[^0-9]/g, '');
+    setReceiveAmount(cleanedValue);
+
+    const rate = getExchangeRate(sendCurrency);
+    const receive = parseFloat(cleanedValue);
+    if (!isNaN(receive) && rate > 0) {
+      setSendAmount((receive / rate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
     } else {
-      setXofAmount("");
+      setSendAmount("");
     }
   };
 
-  const handleXofChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(/[^0-9]/g, ''); // Remove non-numeric characters for XOF
-    setXofAmount(value);
-    const xof = parseFloat(value);
-    if (!isNaN(xof) && exchangeRate > 0) {
-      setEurAmount((xof / exchangeRate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
+  const handleSendCurrencyChange = (currency: string) => {
+    setSendCurrency(currency);
+    // Recalculate receive amount based on new currency and current send amount
+    const rate = getExchangeRate(currency);
+    const send = parseFloat(sendAmount);
+    if (!isNaN(send) && rate > 0) {
+      setReceiveAmount((send * rate).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }));
     } else {
-      setEurAmount("");
+      setReceiveAmount("");
     }
   };
+
+  const currentExchangeRate = getExchangeRate(sendCurrency);
 
   return (
     <section className="relative bg-gradient-to-b from-[#F5F9FF] via-[#D0E3FF] to-[#F5F9FF] from-blue-50 to-white py-20 px-8 overflow-hidden">
@@ -77,19 +105,20 @@ const HeroSection = () => {
                 <div className="flex items-center border rounded-md overflow-hidden">
                   <Input
                     id="send-amount"
-                    type="text" // Changed to text to allow more flexible input handling
-                    value={eurAmount}
-                    onChange={handleEurChange}
+                    type="text"
+                    value={sendAmount}
+                    onChange={handleSendAmountChange}
                     className="border-none focus-visible:ring-0"
-                    inputMode="decimal" // Suggests numeric keyboard for mobile
+                    inputMode="decimal"
                   />
-                  <Select defaultValue="EUR">
+                  <Select value={sendCurrency} onValueChange={handleSendCurrencyChange}>
                     <SelectTrigger className="w-[100px] border-none focus:ring-0">
                       <SelectValue placeholder="Currency" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="EUR">EUR</SelectItem>
-                      {/* <SelectItem value="USD">USD</SelectItem> */}
+                      <SelectItem value="USD">USD</SelectItem>
+                      <SelectItem value="CAD">CAD</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -99,11 +128,11 @@ const HeroSection = () => {
                 <div className="flex items-center border rounded-md overflow-hidden">
                   <Input
                     id="receive-amount"
-                    type="text" // Changed to text to allow more flexible input handling
-                    value={xofAmount}
-                    onChange={handleXofChange}
+                    type="text"
+                    value={receiveAmount}
+                    onChange={handleReceiveAmountChange}
                     className="border-none focus-visible:ring-0"
-                    inputMode="numeric" // Suggests numeric keyboard for mobile
+                    inputMode="numeric"
                   />
                   <Select defaultValue="XOF">
                     <SelectTrigger className="w-[100px] border-none focus:ring-0">
@@ -111,13 +140,17 @@ const HeroSection = () => {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="XOF">XOF</SelectItem>
-                      {/* <SelectItem value="CAD">CAD</SelectItem> */}
                     </SelectContent>
                   </Select>
                 </div>
               </div>
             </div>
-            <p className="text-sm text-gray-500">{t("taux_quotidien", { exchangeRate: exchangeRate.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) })}</p>
+            <p className="text-sm text-gray-500">
+              {t("taux_quotidien_format", {
+                sendCurrency: sendCurrency,
+                exchangeRate: currentExchangeRate.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+              })}
+            </p>
           </div>
         </div>
 
