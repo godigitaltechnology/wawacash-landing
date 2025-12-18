@@ -11,7 +11,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import CallToAction from '@/components/CallToAction';
 import { Lock, FileText, Clock, Phone, MapPin, Mail, Facebook, Linkedin, Instagram, Music } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 
 // Reusable FeatureCard for the "Une entreprise agréée" section
 const AboutFeatureCard = ({ icon: Icon, title, description, iconBgColor, iconTextColor }: { icon: React.ElementType, title: string, description: string, iconBgColor: string, iconTextColor: string }) => (
@@ -117,12 +117,12 @@ const About = () => {
               </Link>
             </div>
             <div className="relative w-full h-[30rem] rounded-xl mt-12 flex items-center justify-center">
-                <img
-                  src="/about_happy.png"
-                  alt={t("about_happy_alt")}
-                  className="w-full h-full object-contain"
-                />
-              </div>
+              <img
+                src="/about_happy.png"
+                alt={t("about_happy_alt")}
+                className="w-full h-full object-contain"
+              />
+            </div>
           </div>
         </section>
 
@@ -159,11 +159,11 @@ const About = () => {
                 <Link to="/faqs" className="text-blue-600 hover:underline font-medium flex items-center justify-center md:justify-start space-x-2">
                   <span>{t("allez_faqs")}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                </svg>
-              </Link>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                  </svg>
+                </Link>
+              </div>
             </div>
-          </div>
 
             <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md mx-auto">
               <h3 className="text-2xl font-bold text-blue-900 mb-6 text-center">{t("remplissez_formulaire_title")}</h3>
@@ -180,12 +180,19 @@ const About = () => {
                   <Label htmlFor="message">{t("message")}</Label>
                   <Textarea id="message" placeholder={t("message")} rows={5} />
                 </div>
-                <p className="text-xs text-gray-500">
-                  {t("form_consent", {
-                    privacyLink: <Link to="/privacy" className="text-blue-600 hover:underline">{t("politique_confidentialite")}</Link>,
-                    termsLink: <Link to="/cgu" className="text-blue-600 hover:underline">{t("conditions")}</Link>
-                  })}
-                </p>
+                  <p className="text-xs text-gray-500">
+                    <Trans
+                      i18nKey="form_consent"
+                      components={{
+                        privacyLink: (
+                          <Link to="/privacy" className="text-blue-600 hover:underline" />
+                        ),
+                        termsLink: (
+                          <Link to="/cgu" className="text-blue-600 hover:underline" />
+                        ),
+                      }}
+                    />
+                  </p>
                 <Button type="submit" className="w-full bg-blue-700 hover:bg-blue-800 text-white">
                   {t("envoyez")}
                 </Button>
