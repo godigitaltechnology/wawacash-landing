@@ -66,7 +66,8 @@
   "nom": "Name",
   "prenom": "First Name",
   "message": "Message",
-  "form_consent": "By submitting this form, you agree that Wawa Cash will use your data to respond to your request. Consult our <privacyLink>privacy of confidentiality</privacyLink> and our <termsLink>terms of conditions</termsLink> for more information.",
+  "email": "Email",
+  "form_consent": "By submitting this form, you agree that Wawa Cash will use your data to respond to your request. Consult our <privacyLink>privacy of confidentiality</privacyLink> and our <termsLink>terms and conditions</termsLink> for more information.",
   "politique_confidentialite": "privacy policy",
   "conditions": "terms and conditions",
   "envoyez": "Send",
@@ -197,5 +198,8 @@
   "mentions_legales_cookies_p1": "The wawacash.com website uses cookies to improve user experience and analyze traffic. By browsing our site, you consent to the use of these cookies.",
   "mentions_legales_cookies_p2": "For more information on the use of cookies and how to manage them, please consult our {{cookiesPolicyLink}}.",
   "mentions_legales_droit_applicable_title": "7. Applicable Law and Jurisdiction",
-  "mentions_legales_droit_applicable_p1": "These legal notices are governed by French law. In the event of a dispute and in the absence of an amicable agreement, the dispute will be brought before the French courts in accordance with the applicable rules of jurisdiction."
+  "mentions_legales_droit_applicable_p1": "These legal notices are governed by French law. In the event of a dispute and in the absence of an amicable agreement, the dispute will be brought before the French courts in accordance with the applicable rules of jurisdiction.",
+  "form_submission_success": "Your message has been sent successfully!",
+  "form_submission_error": "An error occurred while sending your message. Please try again.",
+  "contact_form_target_email": "contact@wawacash.com"
 }

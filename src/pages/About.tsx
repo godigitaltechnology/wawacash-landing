@@ -13,6 +13,13 @@ import CallToAction from '@/components/CallToAction';
 import { Lock, FileText, Clock, Phone, MapPin, Mail, Facebook, Linkedin, Instagram, Music } from 'lucide-react';
 import { useTranslation, Trans } from 'react-i18next';
 
+// Form validation imports
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { toast } from 'sonner'; // For toast notifications
+
 // Reusable FeatureCard for the "Une entreprise agréée" section
 const AboutFeatureCard = ({ icon: Icon, title, description, iconBgColor, iconTextColor }: { icon: React.ElementType, title: string, description: string, iconBgColor: string, iconTextColor: string }) => (
   <div className="flex items-start space-x-4 p-4">
@@ -26,8 +33,83 @@ const AboutFeatureCard = ({ icon: Icon, title, description, iconBgColor, iconTex
   </div>
 );
 
+// Define the form schema using Zod
+const formSchema = z.object({
+  name: z.string().min(2, {
+    message: "Le nom doit contenir au moins 2 caractères.",
+  }).max(50, {
+    message: "Le nom ne doit pas dépasser 50 caractères.",
+  }),
+  firstname: z.string().min(2, {
+    message: "Le prénom doit contenir au moins 2 caractères.",
+  }).max(50, {
+    message: "Le prénom ne doit pas dépasser 50 caractères.",
+  }),
+  email: z.string().email({
+    message: "Veuillez entrer une adresse email valide.",
+  }),
+  message: z.string().min(10, {
+    message: "Le message doit contenir au moins 10 caractères.",
+  }).max(500, {
+    message: "Le message ne doit pas dépasser 500 caractères.",
+  }),
+});
+
 const About = () => {
   const { t } = useTranslation();
+
+  // Initialize react-hook-form
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      firstname: "",
+      email: "",
+      message: "",
+    },
+  });
+
+  // Handle form submission
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    console.log("Form data submitted:", values);
+    const targetEmail = t("contact_form_target_email"); // Get the generic email from translations
+
+    // In a real application, you would send this data to a backend API.
+    // Example of how you might call an API (this is placeholder code):
+    /*
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...values, targetEmail }),
+      });
+
+      if (response.ok) {
+        toast.success(t("form_submission_success"));
+        form.reset(); // Clear the form on success
+      } else {
+        toast.error(t("form_submission_error"));
+      }
+    } catch (error) {
+      console.error("Error sending form:", error);
+      toast.error(t("form_submission_error"));
+    }
+    */
+
+    // For now, just simulate success/failure with a timeout
+    toast.loading("Envoi de votre message...");
+    setTimeout(() => {
+      const success = Math.random() > 0.2; // Simulate 80% success rate
+      if (success) {
+        toast.success(t("form_submission_success"));
+        form.reset();
+      } else {
+        toast.error(t("form_submission_error"));
+      }
+    }, 1500);
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -167,19 +249,60 @@ const About = () => {
 
             <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md mx-auto">
               <h3 className="text-2xl font-bold text-blue-900 mb-6 text-center">{t("remplissez_formulaire_title")}</h3>
-              <form className="space-y-4">
-                <div>
-                  <Label htmlFor="name">{t("nom")}</Label>
-                  <Input id="name" placeholder={t("nom")} />
-                </div>
-                <div>
-                  <Label htmlFor="firstname">{t("prenom")}</Label>
-                  <Input id="firstname" placeholder={t("prenom")} />
-                </div>
-                <div>
-                  <Label htmlFor="message">{t("message")}</Label>
-                  <Textarea id="message" placeholder={t("message")} rows={5} />
-                </div>
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>{t("nom")}</FormLabel>
+                        <FormControl>
+                          <Input placeholder={t("nom")} {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="firstname"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>{t("prenom")}</FormLabel>
+                        <FormControl>
+                          <Input placeholder={t("prenom")} {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>{t("email")}</FormLabel>
+                        <FormControl>
+                          <Input type="email" placeholder="email@example.com" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>{t("message")}</FormLabel>
+                        <FormControl>
+                          <Textarea placeholder={t("message")} rows={5} {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
                   <p className="text-xs text-gray-500">
                     <Trans
                       i18nKey="form_consent"
@@ -193,10 +316,11 @@ const About = () => {
                       }}
                     />
                   </p>
-                <Button type="submit" className="w-full bg-blue-700 hover:bg-blue-800 text-white">
-                  {t("envoyez")}
-                </Button>
-              </form>
+                  <Button type="submit" className="w-full bg-blue-700 hover:bg-blue-800 text-white">
+                    {t("envoyez")}
+                  </Button>
+                </form>
+              </Form>
             </div>
           </div>
         </section>
