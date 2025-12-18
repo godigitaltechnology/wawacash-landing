@@ -29,9 +29,17 @@ const Support = () => {
             </h1>
             <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
               <Trans
-                i18nKey="support_hero_description"
-                components={{ faqsLink: <Link to="/faqs" className="text-blue-600 hover:underline font-medium">{t("faqs_page_link")}</Link> }}
-              />
+  i18nKey="support_hero_description"
+  components={{
+    faqsLink: (
+      <Link
+        to="/faqs"
+        className="text-blue-600 hover:underline font-medium"
+      />
+    )
+  }}
+/>
+
             </p>
 
             {/* Quick FAQ Links */}
