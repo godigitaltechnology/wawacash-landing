@@ -82,10 +82,13 @@ const Support = () => {
                   <Textarea id="message" placeholder={t("message")} rows={5} className="bg-blue-50 border-blue-200 focus:border-blue-500 focus-visible:ring-0 p-4 text-base" />
                 </div>
                 <p className="text-xs text-gray-500 text-left leading-relaxed">
-                  {t("form_consent", {
-                    privacyLink: <Link to="/privacy" className="text-blue-600 hover:underline">{t("politique_confidentialite")}</Link>,
-                    termsLink: <Link to="/cgu" className="text-blue-600 hover:underline">{t("conditions")}</Link>
-                  })}
+                  <Trans
+                    i18nKey="form_consent"
+                    components={{
+                      privacyLink: <Link to="/privacy" className="text-blue-600 hover:underline">{t("politique_confidentialite")}</Link>,
+                      termsLink: <Link to="/cgu" className="text-blue-600 hover:underline">{t("conditions")}</Link>
+                    }}
+                  />
                 </p>
                 <Button type="submit" className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg text-lg font-semibold">
                   {t("envoyez")}
