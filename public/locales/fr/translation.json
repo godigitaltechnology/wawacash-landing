@@ -67,7 +67,7 @@
   "prenom": "Prénom",
   "message": "Message",
   "email": "Email",
-  "form_consent": "En soumettant ce formulaire, vous acceptez que Wawa Cash utilise vos données pour répondre à votre demande. Consultez notre {{privacyLink}} et nos {{termsLink}} pour plus d'informations.",
+  "form_consent": "En soumettant ce formulaire, vous acceptez que Wawa Cash utilise vos données pour répondre à votre demande. Consultez notre <privacyLink>politique de confidentialité</privacyLink> et nos <termsLink>termes et conditions</termsLink> pour plus d'informations.",
   "politique_confidentialite": "politique de confidentialité",
   "conditions": "conditions",
   "envoyez": "Envoyez",
