@@ -15,7 +15,7 @@ const Tarifs = () => {
       <main className="flex-grow">
         <section className="relative bg-gradient-to-b from-blue-50 to-white py-20 px-8 overflow-hidden pt-32 text-center">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-extrabold text-blue-900 leading-tight mb-6">
+            <h1 className="text-5xl md:text-5xl font-extrabold text-blue-900 leading-tight mb-6">
               {t("tarifs_page_title")}
             </h1>
             <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">

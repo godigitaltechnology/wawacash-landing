@@ -13,7 +13,7 @@ const MentionsLegales = () => {
       <Navbar />
       <main className="flex-grow bg-white py-20 px-8 pt-32">
         <div className="max-w-4xl mx-auto prose prose-blue text-gray-700">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-blue-900 leading-tight mb-8 text-center">
+          <h1 className="text-5xl md:text-5xl font-extrabold text-blue-900 leading-tight mb-8 text-center">
             {t("mentions_legales_title")}
           </h1>
           <p className="mb-8 text-lg">

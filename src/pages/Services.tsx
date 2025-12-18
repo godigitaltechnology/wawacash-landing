@@ -20,7 +20,7 @@ const Services = () => {
           <div className="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div className="text-center md:text-left">
               <p className="text-blue-700 font-semibold mb-2">{t("services_hero_tagline")}</p>
-              <h1 className="text-5xl md:text-6xl font-extrabold text-blue-900 leading-tight mb-6">
+              <h1 className="text-5xl md:text-5xl font-extrabold text-blue-900 leading-tight mb-6">
                 {t("services_hero_title")}
               </h1>
               <p className="text-lg text-gray-700 mb-8 max-w-lg mx-auto md:mx-0">

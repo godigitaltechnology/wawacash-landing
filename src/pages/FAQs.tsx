@@ -100,7 +100,7 @@ const FAQs = () => {
         {/* Hero Section for FAQs Page */}
         <section className="relative bg-gradient-to-b from-blue-50 to-white py-20 px-8 overflow-hidden pt-32">
           <div className="relative z-10 max-w-6xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-extrabold text-blue-900 leading-tight mb-6">
+            <h1 className="text-5xl md:text-5xl font-extrabold text-blue-900 leading-tight mb-6">
               {t("faqs_hero_title")}
             </h1>
             <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">

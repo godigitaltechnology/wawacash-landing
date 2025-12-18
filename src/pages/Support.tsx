@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Facebook, Linkedin, Instagram, Music, ChevronRight } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next'; // Importez Trans ici
 
 const Support = () => {
   const { t } = useTranslation();
@@ -28,7 +28,10 @@ const Support = () => {
               {t("support")}
             </h1>
             <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-              {t("support_hero_description", { faqsLink: <Link to="/faqs" className="text-blue-600 hover:underline font-medium">{t("faqs_page_link")}</Link> })}
+              <Trans
+                i18nKey="support_hero_description"
+                components={{ faqsLink: <Link to="/faqs" className="text-blue-600 hover:underline font-medium">{t("faqs_page_link")}</Link> }}
+              />
             </p>
 
             {/* Quick FAQ Links */}
