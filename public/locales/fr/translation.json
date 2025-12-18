@@ -66,7 +66,8 @@
   "nom": "Nom",
   "prenom": "Prénom",
   "message": "Message",
-  "form_consent": "En soumettant ce formulaire, vous acceptez que Wawa Cash utilise vos données pour répondre à votre demande. Consultez notre <privacyLink>politique de confidentialité</privacyLink> et nos <termsLink>termes et conditions</termsLink> pour plus d'informations.",
+  "email": "Email",
+  "form_consent": "En soumettant ce formulaire, vous acceptez que Wawa Cash utilise vos données pour répondre à votre demande. Consultez notre {{privacyLink}} et nos {{termsLink}} pour plus d'informations.",
   "politique_confidentialite": "politique de confidentialité",
   "conditions": "conditions",
   "envoyez": "Envoyez",
@@ -197,5 +198,8 @@
   "mentions_legales_cookies_p1": "Le site wawacash.com utilise des cookies pour améliorer l'expérience utilisateur et analyser le trafic. En naviguant sur notre site, vous consentez à l'utilisation de ces cookies.",
   "mentions_legales_cookies_p2": "Pour plus d'informations sur l'utilisation des cookies et comment les gérer, veuillez consulter notre {{cookiesPolicyLink}}.",
   "mentions_legales_droit_applicable_title": "7. Droit applicable et attribution de juridiction",
-  "mentions_legales_droit_applicable_p1": "Les présentes mentions légales sont régies par le droit français. En cas de litige et à défaut d'accord amiable, le litige sera porté devant les tribunaux français conformément aux règles de compétence en vigueur."
+  "mentions_legales_droit_applicable_p1": "Les présentes mentions légales sont régies par le droit français. En cas de litige et à défaut d'accord amiable, le litige sera porté devant les tribunaux français conformément aux règles de compétence en vigueur.",
+  "form_submission_success": "Votre message a été envoyé avec succès !",
+  "form_submission_error": "Une erreur est survenue lors de l'envoi de votre message. Veuillez réessayer.",
+  "contact_form_target_email": "contact@wawacash.com"
 }
