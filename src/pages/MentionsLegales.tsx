@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { MadeWithDyad } from '@/components/made-with-dyad';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next'; // Importez Trans ici
 
 const MentionsLegales = () => {
   const { t } = useTranslation();
@@ -67,9 +67,10 @@ const MentionsLegales = () => {
             {t("mentions_legales_donnees_personnelles_p1")}
           </p>
           <p className="mb-8">
-            {t("mentions_legales_donnees_personnelles_p2", {
-              privacyPolicyLink: <Link to="/privacy" className="text-blue-600 hover:underline">{t("politique_confidentialite")}</Link>
-            })}
+            <Trans
+              i18nKey="mentions_legales_donnees_personnelles_p2"
+              components={{ privacyPolicyLink: <Link to="/privacy" className="text-blue-600 hover:underline">{t("politique_confidentialite")}</Link> }}
+            />
           </p>
 
           <h2 className="text-3xl font-bold text-blue-800 mb-4">
@@ -79,9 +80,10 @@ const MentionsLegales = () => {
             {t("mentions_legales_cookies_p1")}
           </p>
           <p className="mb-8">
-            {t("mentions_legales_cookies_p2", {
-              cookiesPolicyLink: <Link to="/cookies" className="text-blue-600 hover:underline">{t("footer_charte")}</Link> // Assuming 'Charte d'utilisation responsable' can be used as a placeholder for cookies policy
-            })}
+            <Trans
+              i18nKey="mentions_legales_cookies_p2"
+              components={{ cookiesPolicyLink: <Link to="/cookies" className="text-blue-600 hover:underline">{t("footer_charte")}</Link> }}
+            />
           </p>
 
           <h2 className="text-3xl font-bold text-blue-800 mb-4">

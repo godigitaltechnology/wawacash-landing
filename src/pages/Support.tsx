@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Facebook, Linkedin, Instagram, Music, ChevronRight } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next'; // Importez Trans ici
 
 const Support = () => {
   const { t } = useTranslation();
@@ -28,7 +28,18 @@ const Support = () => {
               {t("support")}
             </h1>
             <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-              {t("support_hero_description", { faqsLink: <Link to="/faqs" className="text-blue-600 hover:underline font-medium">{t("faqs_page_link")}</Link> })}
+              <Trans
+  i18nKey="support_hero_description"
+  components={{
+    faqsLink: (
+      <Link
+        to="/faqs"
+        className="text-blue-600 hover:underline font-medium"
+      />
+    )
+  }}
+/>
+
             </p>
 
             {/* Quick FAQ Links */}
@@ -79,10 +90,13 @@ const Support = () => {
                   <Textarea id="message" placeholder={t("message")} rows={5} className="bg-blue-50 border-blue-200 focus:border-blue-500 focus-visible:ring-0 p-4 text-base" />
                 </div>
                 <p className="text-xs text-gray-500 text-left leading-relaxed">
-                  {t("form_consent", {
-                    privacyLink: <Link to="/privacy" className="text-blue-600 hover:underline">{t("politique_confidentialite")}</Link>,
-                    termsLink: <Link to="/cgu" className="text-blue-600 hover:underline">{t("conditions")}</Link>
-                  })}
+                  <Trans
+                    i18nKey="form_consent"
+                    components={{
+                      privacyLink: <Link to="/privacy" className="text-blue-600 hover:underline">{t("politique_confidentialite")}</Link>,
+                      termsLink: <Link to="/cgu" className="text-blue-600 hover:underline">{t("conditions")}</Link>
+                    }}
+                  />
                 </p>
                 <Button type="submit" className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg text-lg font-semibold">
                   {t("envoyez")}

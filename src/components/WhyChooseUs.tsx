@@ -85,7 +85,7 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Bottom card - Assistance clientèle réactive, spanning full width */}
-        <div className="max-w-6xl mx-auto mt-8">
+        <div className="flex flex-col items-center text-center">
           <FeatureCard
             icon={Clock}
             title={t("assistance_clientele_title")}
