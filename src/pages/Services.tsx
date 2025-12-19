@@ -57,7 +57,7 @@ const Services = () => {
               <div className="flex justify-center">
                 <img
                   src="/services_1.png"
-                  alt="Wawa Cash Services Screenshot"
+                  alt="Wawacash Services Screenshot"
                   className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto object-contain"
                 />
               </div>
@@ -85,7 +85,7 @@ const Services = () => {
             {/* Réception d'argent */}
             <div className="grid md:grid-cols-2 gap-12 items-center mb-20 text-left">
               <div className="flex justify-center md:order-2">
-                <img src="/services_2.png" alt="Wawa Cash Services Screenshot" className="w-full max-w-md rounded-3xl shadow-lg" />
+                <img src="/services_2.png" alt="Wawacash Services Screenshot" className="w-full max-w-md rounded-3xl shadow-lg" />
               </div>
               <div className="md:order-1">
                 <h3 className="text-3xl font-bold text-blue-900 mb-4">{t("reception_argent_title")}</h3>
@@ -127,7 +127,7 @@ const Services = () => {
                 </Link>
               </div>
               <div className="flex justify-center">
-                <img src="/services_3.png" alt="Wawa Cash Services Screenshot" className="w-full max-w-md rounded-3xl shadow-lg" />
+                <img src="/services_3.png" alt="Wawacash Services Screenshot" className="w-full max-w-md rounded-3xl shadow-lg" />
               </div>
             </div>
 
@@ -151,7 +151,7 @@ const Services = () => {
               <div className="flex justify-center">
                 <img
                   src="/services_4.png"
-                  alt="Wawa Cash Services Screenshot"
+                  alt="Wawacash Services Screenshot"
                   className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto object-contain"
                 />
               </div>
@@ -177,7 +177,7 @@ const Services = () => {
               <div className="relative w-full h-[32rem] rounded-xl mt-12 flex items-center justify-center">
                 <img
                   src="/services_groupe.png"
-                  alt="Wawa Cash Services Screenshot"
+                  alt="Wawacash Services Screenshot"
                   className="w-full h-full object-contain"
                 />
               </div>

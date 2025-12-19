@@ -19,7 +19,7 @@ const Footer = () => {
             </Link>
           </div>
 
-          {/* Wawa Cash Links */}
+          {/* Wawacash Links */}
           <div className="col-span-1 md:col-span-2">
             <h4 className="font-semibold text-lg mb-4">{t("footer_wawacash_title")}</h4>
             <ul className="space-y-2 text-gray-300 text-sm">

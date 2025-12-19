@@ -157,7 +157,7 @@ const HeroSection = () => {
         <div className="relative flex justify-center md:justify-end self-end">
           <img
             src="/frame_background.png"
-            alt="Wawa Cash App Screenshot"
+            alt="Wawacash App Screenshot"
             className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto object-contain"
           />
         </div>

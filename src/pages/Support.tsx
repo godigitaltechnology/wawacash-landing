@@ -29,17 +29,9 @@ const Support = () => {
             </h1>
             <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
               <Trans
-  i18nKey="support_hero_description"
-  components={{
-    faqsLink: (
-      <Link
-        to="/faqs"
-        className="text-blue-600 hover:underline font-medium"
-      />
-    )
-  }}
-/>
-
+                i18nKey="support_hero_description"
+                components={{ faqsLink: <Link to="/faqs" className="text-blue-600 hover:underline font-medium">{t("faqs_page_link")}</Link> }}
+              />
             </p>
 
             {/* Quick FAQ Links */}
@@ -106,7 +98,7 @@ const Support = () => {
           </div>
         </section>
 
-        {/* Suivez Wawa Cash Section */}
+        {/* Suivez Wawacash Section */}
         <section className="bg-white py-20 px-8 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-extrabold text-blue-900 mb-6">{t("suivez_wawacash_title")}</h2>

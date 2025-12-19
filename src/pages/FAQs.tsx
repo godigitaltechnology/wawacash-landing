@@ -15,57 +15,44 @@ import { Phone, MapPin, Mail, Facebook, Linkedin, Instagram, Music, Search } fro
 import { useTranslation } from 'react-i18next';
 
 const rawFaqs = [
-  {
-    questionKey: "faq_q1",
-    answerKey: "faq_a1",
-    categoryKey: "general"
-  },
-  {
-    questionKey: "faq_q2",
-    answerKey: "faq_a2",
-    categoryKey: "wawa_send"
-  },
-  {
-    questionKey: "faq_q3",
-    answerKey: "faq_a3",
-    categoryKey: "general"
-  },
-  {
-    questionKey: "faq_q4",
-    answerKey: "faq_a4",
-    categoryKey: "compte"
-  },
-  {
-    questionKey: "faq_q5",
-    answerKey: "faq_a5",
-    categoryKey: "compte"
-  },
-  {
-    questionKey: "faq_q6",
-    answerKey: "faq_a6",
-    categoryKey: "wawa_send"
-  },
-  {
-    questionKey: "faq_q7",
-    answerKey: "faq_a7",
-    categoryKey: "tarifs_faq"
-  },
-  {
-    questionKey: "faq_q8",
-    answerKey: "faq_a8",
-    categoryKey: "securite"
-  },
-  {
-    questionKey: "faq_q9",
-    answerKey: "faq_a9",
-    categoryKey: "assistance"
-  },
+  { questionKey: "faq_q1", answerKey: "faq_a1", categoryKey: "general" },
+  { questionKey: "faq_q2", answerKey: "faq_a2", categoryKey: "wawa_send" },
+  { questionKey: "faq_q3", answerKey: "faq_a3", categoryKey: "general" },
+  { questionKey: "faq_q4", answerKey: "faq_a4", categoryKey: "compte" },
+  { questionKey: "faq_q5", answerKey: "faq_a5", categoryKey: "compte" },
+  { questionKey: "faq_q6", answerKey: "faq_a6", categoryKey: "transfert" },
+  { questionKey: "faq_q7", answerKey: "faq_a7", categoryKey: "paiement" },
+  { questionKey: "faq_q8", answerKey: "faq_a8", categoryKey: "transfert" },
+  { questionKey: "faq_q9", answerKey: "faq_a9", categoryKey: "transfert" },
+  { questionKey: "faq_q10", answerKey: "faq_a10", categoryKey: "tarifs_faq" },
+
+  { questionKey: "faq_q11", answerKey: "faq_a11", categoryKey: "transfert" },
+  { questionKey: "faq_q12", answerKey: "faq_a12", categoryKey: "transfert" },
+  { questionKey: "faq_q13", answerKey: "faq_a13", categoryKey: "transfert" },
+  { questionKey: "faq_q14", answerKey: "faq_a14", categoryKey: "wawa_send" },
+  { questionKey: "faq_q15", answerKey: "faq_a15", categoryKey: "securite" },
+  { questionKey: "faq_q16", answerKey: "faq_a16", categoryKey: "securite" },
+  { questionKey: "faq_q17", answerKey: "faq_a17", categoryKey: "assistance" },
+  { questionKey: "faq_q18", answerKey: "faq_a18", categoryKey: "general" },
+  { questionKey: "faq_q19", answerKey: "faq_a19", categoryKey: "tarifs_faq" },
+  { questionKey: "faq_q20", answerKey: "faq_a20", categoryKey: "compte" },
+
+  { questionKey: "faq_q21", answerKey: "faq_a21", categoryKey: "transfert" },
+  { questionKey: "faq_q22", answerKey: "faq_a22", categoryKey: "transfert" },
+  { questionKey: "faq_q23", answerKey: "faq_a23", categoryKey: "assistance" },
+  { questionKey: "faq_q24", answerKey: "faq_a24", categoryKey: "paiement" },
+  { questionKey: "faq_q25", answerKey: "faq_a25", categoryKey: "assistance" },
+  { questionKey: "faq_q26", answerKey: "faq_a26", categoryKey: "transfert" },
+  { questionKey: "faq_q27", answerKey: "faq_a27", categoryKey: "securite" },
+  { questionKey: "faq_q28", answerKey: "faq_a28", categoryKey: "notification" },
+  { questionKey: "faq_q29", answerKey: "faq_a29", categoryKey: "assistance" },
+  { questionKey: "faq_q30", answerKey: "faq_a30", categoryKey: "general" }
 ];
 
 const FAQs = () => {
   const { t, i18n } = useTranslation();
   const categoryKeys = ["tous", "general", "wawa_send", "securite", "compte", "tarifs_faq", "assistance"];
-  
+
   const [activeCategory, setActiveCategory] = useState(t("tous"));
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -89,7 +76,7 @@ const FAQs = () => {
     }))
     .filter(faq => {
       const matchesSearch = faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            faq.answer.toLowerCase().includes(searchTerm.toLowerCase());
+        faq.answer.toLowerCase().includes(searchTerm.toLowerCase());
       return matchesSearch;
     });
 
@@ -131,7 +118,7 @@ const FAQs = () => {
           </div>
         </section>
 
-        {/* Suivez Wawa Cash Section */}
+        {/* Suivez Wawacash Section */}
         <section className="bg-white py-20 px-8 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-extrabold text-blue-900 mb-6">{t("suivez_wawacash_title")}</h2>
