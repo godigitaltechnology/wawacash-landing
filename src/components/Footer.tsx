@@ -56,7 +56,6 @@ const Footer = () => {
             <ul className="space-y-2 text-gray-300 text-sm">
               <li><Link to="/mentions" className="hover:text-white">{t("footer_mentions")}</Link></li>
               <li><Link to="/cgu" className="hover:text-white">{t("footer_cgu")}</Link></li>
-              <li><Link to="/covicos" className="hover:text-white">{t("footer_covicos")}</Link></li>
               <li><Link to="/cgv" className="hover:text-white">{t("footer_cgv")}</Link></li>
               <li><Link to="/charte" className="hover:text-white">{t("footer_charte")}</Link></li>
             </ul>

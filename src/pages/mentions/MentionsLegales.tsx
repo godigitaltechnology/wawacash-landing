@@ -19,7 +19,6 @@ const legalDocuments = [
   { key: "footer_lcbft", to: "/lcbft" }, // Politique LCBFT
   { key: "footer_security", to: "/security" }, // Politique de Sécurité des Transactions
   { key: "footer_policy", to: "/policy" }, // Politique de Rem. & Réc.
-  { key: "footer_covicos", to: "/covicos" }, // COVICOS
   { key: "footer_cgv", to: "/cgv" }, // CGV/CGS
   { key: "regulatory_reports_title", to: "/legal/reports" }
 ];
