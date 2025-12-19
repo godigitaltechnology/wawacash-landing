@@ -9,13 +9,13 @@ import About from "./pages/About";
 import FAQs from "./pages/FAQs";
 import Support from "./pages/Support";
 import Tarifs from "./pages/Tarifs";
-import MentionsLegales from "./pages/MentionsLegales";
-import LegalUpdates from "./pages/LegalUpdates"; // New
-import DataPrivacyFramework from "./pages/DataPrivacyFramework"; // New
-import IntellectualPropertyRules from "./pages/IntellectualPropertyRules"; // New
-import UserInfo from "./pages/UserInfo"; // New
-import DataSubjectRightsForm from "./pages/DataSubjectRightsForm"; // New
-import RegulatoryReports from "./pages/RegulatoryReports"; // New
+import MentionsLegales from "@/pages/mentions/MentionsLegales";
+import LegalUpdates from "@/pages/mentions/LegalUpdates";
+import DataPrivacyFramework from "@/pages/mentions/DataPrivacyFramework";
+import IntellectualPropertyRules from "@/pages/mentions/IntellectualPropertyRules";
+import UserInfo from "@/pages/mentions/UserInfo";
+import DataSubjectRightsForm from "@/pages/mentions/DataSubjectRightsForm";
+import RegulatoryReports from "@/pages/mentions/RegulatoryReports";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,12 +34,12 @@ const App = () => (
           <Route path="/support" element={<Support />} />
           <Route path="/tarifs" element={<Tarifs />} />
           <Route path="/mentions" element={<MentionsLegales />} />
-          <Route path="/legal/updates" element={<LegalUpdates />} /> {/* New Route */}
-          <Route path="/legal/data-privacy" element={<DataPrivacyFramework />} /> {/* New Route */}
-          <Route path="/legal/ip-rules" element={<IntellectualPropertyRules />} /> {/* New Route */}
-          <Route path="/legal/user-info" element={<UserInfo />} /> {/* New Route */}
-          <Route path="/legal/data-rights" element={<DataSubjectRightsForm />} /> {/* New Route */}
-          <Route path="/legal/reports" element={<RegulatoryReports />} /> {/* New Route */}
+          <Route path="/legal/updates" element={<LegalUpdates />} />
+          <Route path="/legal/data-privacy" element={<DataPrivacyFramework />} />
+          <Route path="/legal/ip-rules" element={<IntellectualPropertyRules />} />
+          <Route path="/legal/user-info" element={<UserInfo />} />
+          <Route path="/legal/data-rights" element={<DataSubjectRightsForm />} />
+          <Route path="/legal/reports" element={<RegulatoryReports />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
