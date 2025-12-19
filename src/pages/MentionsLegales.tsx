@@ -3,7 +3,26 @@ import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { MadeWithDyad } from '@/components/made-with-dyad';
-import { useTranslation, Trans } from 'react-i18next'; // Importez Trans ici
+import { useTranslation } from 'react-i18next';
+import { ChevronRight } from 'lucide-react';
+
+const legalDocuments = [
+  { key: "legal_updates_title", to: "/legal/updates" },
+  { key: "footer_cgu", to: "/cgu" }, // Conditions d'utilisation
+  { key: "footer_privacy", to: "/privacy" }, // Politique de confidentialité
+  { key: "data_privacy_framework_title", to: "/legal/data-privacy" },
+  { key: "intellectual_property_rules_title", to: "/legal/ip-rules" },
+  { key: "user_information_title", to: "/legal/user-info" },
+  { key: "footer_charte", to: "/charte" }, // Charte d'utilisation responsable (can serve as cookies policy for now)
+  { key: "data_subject_rights_form_title", to: "/legal/data-rights" },
+  { key: "footer_kyc", to: "/kyc" }, // Politique KYC
+  { key: "footer_lcbft", to: "/lcbft" }, // Politique LCBFT
+  { key: "footer_security", to: "/security" }, // Politique de Sécurité des Transactions
+  { key: "footer_policy", to: "/policy" }, // Politique de Rem. & Réc.
+  { key: "footer_covicos", to: "/covicos" }, // COVICOS
+  { key: "footer_cgv", to: "/cgv" }, // CGV/CGS
+  { key: "regulatory_reports_title", to: "/legal/reports" }
+];
 
 const MentionsLegales = () => {
   const { t } = useTranslation();
@@ -16,82 +35,22 @@ const MentionsLegales = () => {
           <h1 className="text-5xl md:text-6xl font-extrabold text-blue-900 leading-tight mb-8 text-center">
             {t("mentions_legales_title")}
           </h1>
-          <p className="mb-8 text-lg">
-            {t("mentions_legales_intro")}
+          <p className="mb-8 text-lg text-center">
+            {t("legal_documents_list_intro")}
           </p>
 
-          <h2 className="text-3xl font-bold text-blue-800 mb-4">
-            {t("mentions_legales_editeur_title")}
-          </h2>
-          <ul className="list-disc list-inside space-y-2 mb-8">
-            <li>{t("mentions_legales_editeur_nom")}</li>
-            <li>{t("mentions_legales_editeur_forme")}</li>
-            <li>{t("mentions_legales_editeur_adresse")}</li>
-            <li>{t("mentions_legales_editeur_capital")}</li>
-            <li>{t("mentions_legales_editeur_rcs")}</li>
-            <li>{t("mentions_legales_editeur_tva")}</li>
-            <li>{t("mentions_legales_editeur_email")}</li>
-            <li>{t("mentions_legales_editeur_tel")}</li>
-          </ul>
-
-          <h2 className="text-3xl font-bold text-blue-800 mb-4">
-            {t("mentions_legales_directeur_publication_title")}
-          </h2>
-          <p className="mb-8">
-            {t("mentions_legales_directeur_publication_nom")}
-          </p>
-
-          <h2 className="text-3xl font-bold text-blue-800 mb-4">
-            {t("mentions_legales_hebergement_title")}
-          </h2>
-          <ul className="list-disc list-inside space-y-2 mb-8">
-            <li>{t("mentions_legales_hebergement_nom")}</li>
-            <li>{t("mentions_legales_hebergement_adresse")}</li>
-            <li>{t("mentions_legales_hebergement_site")}</li>
-          </ul>
-
-          <h2 className="text-3xl font-bold text-blue-800 mb-4">
-            {t("mentions_legales_propriete_intellectuelle_title")}
-          </h2>
-          <p className="mb-4">
-            {t("mentions_legales_propriete_intellectuelle_p1")}
-          </p>
-          <p className="mb-8">
-            {t("mentions_legales_propriete_intellectuelle_p2")}
-          </p>
-
-          <h2 className="text-3xl font-bold text-blue-800 mb-4">
-            {t("mentions_legales_donnees_personnelles_title")}
-          </h2>
-          <p className="mb-4">
-            {t("mentions_legales_donnees_personnelles_p1")}
-          </p>
-          <p className="mb-8">
-            <Trans
-              i18nKey="mentions_legales_donnees_personnelles_p2"
-              components={{ privacyPolicyLink: <Link to="/privacy" className="text-blue-600 hover:underline">{t("politique_confidentialite")}</Link> }}
-            />
-          </p>
-
-          <h2 className="text-3xl font-bold text-blue-800 mb-4">
-            {t("mentions_legales_cookies_title")}
-          </h2>
-          <p className="mb-4">
-            {t("mentions_legales_cookies_p1")}
-          </p>
-          <p className="mb-8">
-            <Trans
-              i18nKey="mentions_legales_cookies_p2"
-              components={{ cookiesPolicyLink: <Link to="/cookies" className="text-blue-600 hover:underline">{t("footer_charte")}</Link> }}
-            />
-          </p>
-
-          <h2 className="text-3xl font-bold text-blue-800 mb-4">
-            {t("mentions_legales_droit_applicable_title")}
-          </h2>
-          <p className="mb-8">
-            {t("mentions_legales_droit_applicable_p1")}
-          </p>
+          <div className="space-y-4">
+            {legalDocuments.map((doc, index) => (
+              <Link
+                key={index}
+                to={doc.to}
+                className="flex items-center justify-between p-4 bg-blue-50 rounded-lg shadow-sm hover:bg-blue-100 transition-colors text-blue-800 font-medium"
+              >
+                <span>{t(doc.key)}</span>
+                <ChevronRight className="h-5 w-5 text-blue-600" />
+              </Link>
+            ))}
+          </div>
         </div>
       </main>
       <Footer />
